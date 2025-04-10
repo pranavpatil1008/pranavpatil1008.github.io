@@ -11,11 +11,11 @@
 </head>
 <body>
 
-    <!-- Navigation (Prompt #1 / #12 adjustments) -->
-    <header> {/* Changed nav to header for semantic main navigation */}
+    <!-- Navigation Header -->
+    <header>
         <nav class="navbar">
             <div class="nav-brand">Pranav Patil</div>
-            <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">☰</button> {/* Changed div to button */}
+            <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">☰</button>
             <ul class="nav-links">
                 <li><a href="#home" aria-label="Go to Home section">Home</a></li>
                 <li><a href="#about" aria-label="Go to About Me section">About Me</a></li>
@@ -27,15 +27,15 @@
                 <li><a href="#blog" aria-label="Go to Blog section">Blog</a></li>
                 <li><a href="#tools" aria-label="Go to Tools & Resources section">Tools/Resources</a></li>
                 <li><a href="#contact" aria-label="Go to Contact section">Contact</a></li>
-                {/* Removed placeholder li for cleaner nav */}
+                <!-- Placeholder item removed for production -->
             </ul>
         </nav>
     </header>
 
-    {/* Main Content Wrapper */}
+    <!-- Main Content Wrapper -->
     <main>
 
-        {/* Home (Prompt #2) */}
+        <!-- Home Section -->
         <section id="home" class="home-section section" aria-labelledby="home-heading">
             <div class="home-content">
                 <h1 id="home-heading">Welcome to my digital hub!</h1>
@@ -48,7 +48,7 @@
             </div>
         </section>
 
-        {/* About Me (Prompt #3) */}
+        <!-- About Me Section -->
         <section id="about" class="about-section section" aria-labelledby="about-heading">
             <div class="about-content">
                 <h2 id="about-heading">About Me</h2>
@@ -57,12 +57,12 @@
             </div>
         </section>
 
-        {/* Education (Prompt #4) */}
+        <!-- Education Section -->
         <section id="education" class="education-section section" aria-labelledby="education-heading">
             <div class="education-content">
                 <h2 id="education-heading">Education</h2>
-                <article class="degree" aria-labelledby="ms-degree"> {/* Changed div to article */}
-                    <h3 id="ms-degree">M.S. in Information Science <span class="degree-date">(Expected Dec 2025)</span></h3> {/* Added span for date */}
+                <article class="degree" aria-labelledby="ms-degree">
+                    <h3 id="ms-degree">M.S. in Information Science <span class="degree-date">(Expected Dec 2025)</span></h3>
                     <p>Indiana University, Luddy School of Informatics, GPA 3.838</p>
                     <p><strong>Specialization:</strong> Information Technology Leadership</p>
                     <p><strong>Key Coursework:</strong></p>
@@ -76,29 +76,29 @@
                         <li>Capstone in Info and Lib Sci (in progress)</li>
                     </ul>
                 </article>
-                <article class="degree" aria-labelledby="ba-degree"> {/* Changed div to article */}
-                    <h3 id="ba-degree">B.A. in Management and Human Organization / Human-Centered Computing <span class="degree-date">(Dec 2022)</span></h3> {/* Added span for date */}
+                <article class="degree" aria-labelledby="ba-degree">
+                    <h3 id="ba-degree">B.A. in Management and Human Organization / Human-Centered Computing <span class="degree-date">(Dec 2022)</span></h3>
                     <p>Indiana University, College of Arts & Sciences</p>
                 </article>
                 <p class="placeholder">Capstone project summary and additional coursework details coming soon.</p>
             </div>
         </section>
 
-        {/* Experience (Prompt #5) */}
+        <!-- Experience Section -->
         <section id="experience" class="experience-section section" aria-labelledby="experience-heading">
             <div class="experience-content">
                 <h2 id="experience-heading">Experience</h2>
                 <div class="timeline">
-                    <article class="timeline-item" aria-labelledby="exp-job1-title"> {/* Changed div to article */}
+                    <article class="timeline-item" aria-labelledby="exp-job1-title">
                         <h3 id="exp-job1-title">Assistant Manager</h3>
-                        <p class="timeline-details"><span class="date">(May 2019 – Oct 2024)</span> | Residential Programs and Services, IMU, Forest Dining – Bloomington, IN</p> {/* Combined details */}
+                        <p class="timeline-details"><span class="date">(May 2019 – Oct 2024)</span> | Residential Programs and Services, IMU, Forest Dining – Bloomington, IN</p>
                         <ul>
                             <li>Managed and mentored 100+ student staff across shifts</li>
                             <li>Streamlined workflows under dynamic campus demands</li>
                             <li>Raised service standards through feedback-driven improvements</li>
                         </ul>
                     </article>
-                    <article class="timeline-item" aria-labelledby="exp-job2-title"> {/* Changed div to article */}
+                    <article class="timeline-item" aria-labelledby="exp-job2-title">
                         <h3 id="exp-job2-title">Founder & Consultant</h3>
                         <p class="timeline-details"><span class="date">(May 2017 – Present)</span> | Radha Madhav Buildcon Ltd. – Pune, MH, India</p>
                         <ul>
@@ -108,7 +108,7 @@
                             <li>Currently raising capital for residential projects</li>
                         </ul>
                     </article>
-                    <article class="timeline-item" aria-labelledby="exp-job3-title"> {/* Changed div to article */}
+                    <article class="timeline-item" aria-labelledby="exp-job3-title">
                         <h3 id="exp-job3-title">Manager</h3>
                         <p class="timeline-details"><span class="date">(Feb 2023 – July 2023)</span> | Developmental Services Inc. – Bloomington, IN</p>
                         <ul>
@@ -122,7 +122,7 @@
             </div>
         </section>
 
-        {/* Skills (Prompt #6) */}
+        <!-- Skills Section -->
         <section id="skills" class="skills-section section" aria-labelledby="skills-heading">
             <div class="skills-content">
                 <h2 id="skills-heading">Skills</h2>
@@ -152,42 +152,42 @@
             </div>
         </section>
 
-        {/* Projects (Prompt #7) */}
+        <!-- Projects Section -->
         <section id="projects" class="projects-section section" aria-labelledby="projects-heading">
             <div class="projects-content">
                 <h2 id="projects-heading">Projects</h2>
-                <div class="carousel-container"> {/* Added a container */}
+                <div class="carousel-container">
                     <div class="carousel">
                         <div class="carousel-track">
-                            <article class="project-card" aria-labelledby="proj1-title"> {/* Changed div to article */}
+                            <article class="project-card" aria-labelledby="proj1-title">
                                 <h3 id="proj1-title">Unreal Engine Simulation Project</h3>
                                 <p>Developed a 3D educational environment simulating Arctic climate impacts, leveraging asset imports and configuration for immersive insights.</p>
                                 <a href="#" class="btn" aria-label="Learn more about the Unreal Engine Simulation Project">Learn More</a>
                             </article>
-                            <article class="project-card" aria-labelledby="proj2-title"> {/* Changed div to article */}
+                            <article class="project-card" aria-labelledby="proj2-title">
                                 <h3 id="proj2-title">Operation Intel (Cybersecurity Game)</h3>
                                 <p>Created an interactive game to teach cybersecurity principles through engaging gameplay, emphasizing user education.</p>
                                 <a href="#" class="btn" aria-label="Learn more about the Operation Intel Cybersecurity Game">Learn More</a>
                             </article>
-                            <article class="project-card" aria-labelledby="proj3-title"> {/* Changed div to article */}
+                            <article class="project-card" aria-labelledby="proj3-title">
                                 <h3 id="proj3-title">U.S. Basketball Trends Visualization</h3>
                                 <p>Analyzed demographic trends in basketball participation using Tableau and Gephi, identifying COVID-19 impacts.</p>
                                 <a href="#" class="btn" aria-label="Learn more about the U.S. Basketball Trends Visualization">Learn More</a>
                             </article>
                             {/* Placeholder cards */}
-                            <article class="project-card placeholder-card" aria-labelledby="proj-tbd1-title"> {/* Changed div to article */}
+                            <article class="project-card placeholder-card" aria-labelledby="proj-tbd1-title">
                                 <h3 id="proj-tbd1-title">Project TBD 1</h3>
                                 <p>Details coming soon.</p>
                             </article>
-                            <article class="project-card placeholder-card" aria-labelledby="proj-tbd2-title"> {/* Changed div to article */}
+                            <article class="project-card placeholder-card" aria-labelledby="proj-tbd2-title">
                                 <h3 id="proj-tbd2-title">Project TBD 2</h3>
                                 <p>Details coming soon.</p>
                             </article>
-                             <article class="project-card placeholder-card" aria-labelledby="proj-tbd3-title"> {/* Changed div to article */}
+                             <article class="project-card placeholder-card" aria-labelledby="proj-tbd3-title">
                                 <h3 id="proj-tbd3-title">Project TBD 3</h3>
                                 <p>Details coming soon.</p>
                             </article>
-                        </div>
+                        </div> {/* End Carousel Track */}
                     </div> {/* End Carousel */}
                     <button class="carousel-btn prev" aria-label="Previous Project">❮</button>
                     <button class="carousel-btn next" aria-label="Next Project">❯</button>
@@ -196,7 +196,7 @@
             </div>
         </section>
 
-        {/* Leadership & Affiliations (Prompt #8) */}
+        <!-- Leadership & Affiliations Section -->
         <section id="leadership" class="leadership-section section" aria-labelledby="leadership-heading">
             <div class="leadership-content">
                 <h2 id="leadership-heading">Leadership & Affiliations</h2>
@@ -218,7 +218,7 @@
             </div>
         </section>
 
-        {/* Blog (Prompt #9) */}
+        <!-- Blog Section -->
         <section id="blog" class="blog-section section" aria-labelledby="blog-heading">
             <div class="blog-content">
                 <h2 id="blog-heading">Blog</h2>
@@ -230,19 +230,19 @@
             </div>
         </section>
 
-        {/* Tools/Resources (Prompt #10) */}
+        <!-- Tools/Resources Section -->
         <section id="tools" class="tools-section section" aria-labelledby="tools-heading">
             <div class="tools-content">
                 <h2 id="tools-heading">Tools/Resources</h2>
                 <p>A planned hub for interactive tools and resources, including Tableau dashboards, code snippets, and project templates.</p>
                 <div class="tools-grid">
-                    <article class="tool-card"> {/* Changed div to article */}
+                    <article class="tool-card">
                         <h3>Coming Soon</h3> <p>Tool TBD</p>
                     </article>
-                    <article class="tool-card"> {/* Changed div to article */}
+                    <article class="tool-card">
                         <h3>Coming Soon</h3> <p>Tool TBD</p>
                     </article>
-                    <article class="tool-card"> {/* Changed div to article */}
+                    <article class="tool-card">
                         <h3>Coming Soon</h3> <p>Tool TBD</p>
                     </article>
                 </div>
@@ -250,7 +250,7 @@
             </div>
         </section>
 
-        {/* Contact (Prompt #11) */}
+        <!-- Contact Section -->
         <section id="contact" class="contact-section section" aria-labelledby="contact-heading">
             <div class="contact-content">
                 <h2 id="contact-heading">Contact</h2>
@@ -259,15 +259,15 @@
                 <form id="contact-form">
                     <div class="form-group">
                         <label for="name">Name</label>
-                        <input type="text" id="name" name="name" required>
+                        <input type="text" id="name" name="name" required aria-required="true"> {/* Added aria-required */}
                     </div>
                     <div class="form-group">
                         <label for="email">Email</label>
-                        <input type="email" id="email" name="email" required>
+                        <input type="email" id="email" name="email" required aria-required="true"> {/* Added aria-required */}
                     </div>
                     <div class="form-group">
                         <label for="message">Message</label>
-                        <textarea id="message" name="message" rows="5" required></textarea>
+                        <textarea id="message" name="message" rows="5" required aria-required="true"></textarea> {/* Added aria-required */}
                     </div>
                     <button type="submit" class="btn">Submit</button>
                 </form>
@@ -277,17 +277,16 @@
 
     </main> {/* End Main Content Wrapper */}
 
-    {/* Simple Footer */}
+    <!-- Site Footer -->
     <footer class="site-footer">
-        <p>© <span id="year"></span> Pranav Patil. All rights reserved.</p> {/* Year will be added by JS */}
+        <p>© <span id="year"></span> Pranav Patil. All rights reserved.</p>
          <p class="placeholder">Links to privacy policy or other footer items TBD.</p>
     </footer>
 
-
-    {/* Placeholder for CMS Integration (from Prompt #12) */}
+    <!-- Placeholder for CMS Integration -->
     <div class="cms-placeholder" style="display:none;">CMS integration TBD for dynamic content updates.</div>
 
-    {/* JavaScript File */}
+    <!-- JavaScript File -->
     <script src="script.js"></script>
 </body>
 </html>
