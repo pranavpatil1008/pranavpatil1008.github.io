@@ -1,105 +1,117 @@
+// Wrap everything in a DOMContentLoaded listener to ensure HTML is ready
 document.addEventListener('DOMContentLoaded', () => {
 
     // --- Cache DOM Elements ---
-    const header = document.querySelector('header');
-    const navbar = document.querySelector('.navbar');
-    const hamburger = document.querySelector('.hamburger');
-    const navLinksContainer = document.querySelector('.nav-links');
-    const navLinks = document.querySelectorAll('.nav-links a');
-    const sections = document.querySelectorAll('main .section'); // Target sections within main
-    const footerYear = document.getElementById('year');
+    const header = document.querySelector('header'); // For scroll effects
+    const navbar = document.querySelector('.navbar'); // For height calculations
+    const hamburger = document.querySelector('.hamburger'); // Mobile menu toggle
+    const navLinksContainer = document.querySelector('.nav-links'); // Mobile menu container
+    const navLinks = document.querySelectorAll('.nav-links a'); // Individual nav links
+    const sections = document.querySelectorAll('main .section'); // All main content sections
+    const footerYear = document.getElementById('year'); // Span for dynamic year
 
-    // --- Navbar & Mobile Menu ---
+    // --- Navbar & Mobile Menu Logic ---
     if (hamburger && navLinksContainer) {
         hamburger.addEventListener('click', () => {
-            navLinksContainer.classList.toggle('active');
+            const isActive = navLinksContainer.classList.toggle('active');
             // Toggle ARIA attribute for accessibility
-            const isExpanded = navLinksContainer.classList.contains('active');
-            hamburger.setAttribute('aria-expanded', isExpanded);
+            hamburger.setAttribute('aria-expanded', isActive);
+            // Prevent body scrolling when mobile menu is open (optional)
+            // document.body.style.overflow = isActive ? 'hidden' : '';
         });
     }
 
-    // Close mobile menu if user clicks outside of it (optional but good UX)
+    // Close mobile menu if user clicks outside of it
     document.addEventListener('click', (event) => {
         if (navLinksContainer && navLinksContainer.classList.contains('active') &&
             !navLinksContainer.contains(event.target) && !hamburger.contains(event.target)) {
                 navLinksContainer.classList.remove('active');
-                hamburger.setAttribute('aria-expanded', 'false');
+                if (hamburger) hamburger.setAttribute('aria-expanded', 'false');
+                // document.body.style.overflow = ''; // Re-enable body scroll
         }
     });
 
 
     // --- Navbar Style Change on Scroll ---
-    const scrollThreshold = 50; // Pixels to scroll before changing style
-    if (header) { // Use header if it exists, otherwise navbar
-        window.addEventListener('scroll', () => {
+    const scrollThreshold = 50; // Pixels scrolled before adding class
+    if (header) {
+        // Function to add/remove 'scrolled' class
+        const handleScroll = () => {
             if (window.scrollY > scrollThreshold) {
                 header.classList.add('scrolled');
             } else {
                 header.classList.remove('scrolled');
             }
-        });
+        };
+        // Initial check in case the page loads already scrolled
+        handleScroll();
+        // Add listener
+        window.addEventListener('scroll', handleScroll);
+        console.log("Navbar scroll effect initialized.");
     }
 
-    // --- Smooth Scrolling for Nav Links ---
+    // --- Smooth Scrolling for Nav Links & Mobile Menu Close ---
     navLinks.forEach(link => {
         link.addEventListener('click', (e) => {
             const href = link.getAttribute('href');
+            // Check if it's an internal anchor link
             if (href && href.startsWith('#')) {
-                e.preventDefault();
+                e.preventDefault(); // Prevent default jump
                 const targetId = href.substring(1);
                 const targetElement = document.getElementById(targetId);
 
                 if (targetElement) {
-                    const navBarHeight = navbar ? navbar.offsetHeight : 70; // Get actual height or fallback
+                    const navBarHeight = navbar ? navbar.offsetHeight : 70; // Use actual height or fallback
                     const elementPosition = targetElement.getBoundingClientRect().top;
-                    // Calculate precise scroll position, accounting for current scroll and navbar height
                     const offsetPosition = elementPosition + window.pageYOffset - navBarHeight - 10; // Add 10px buffer
 
+                    // Perform smooth scroll
                     window.scrollTo({
                         top: offsetPosition,
                         behavior: 'smooth'
                     });
 
-                    // Close mobile menu after clicking
+                    // Close mobile menu after clicking a link, if open
                     if (navLinksContainer && navLinksContainer.classList.contains('active')) {
                         navLinksContainer.classList.remove('active');
                         if (hamburger) hamburger.setAttribute('aria-expanded', 'false');
+                        // document.body.style.overflow = ''; // Re-enable body scroll
                     }
                 }
             }
-            // Non-hash links will proceed normally
+            // If it's not an anchor link (e.g., external), default behavior applies
         });
     });
 
     // --- Active Nav Link Highlighting on Scroll ---
     if (sections.length > 0 && navLinks.length > 0) {
         const observerOptions = {
-            root: null, // Relative to viewport
-            rootMargin: '-100px 0px -50% 0px', // Adjust margin: activates when section is in upper part of viewport
-            threshold: 0 // Trigger as soon as 1 pixel is visible within rootMargin
+            root: null,
+            // Activate slightly before the section hits the top, deactivate when center passed bottom
+            rootMargin: `-${navbar ? navbar.offsetHeight : 70}px 0px -40% 0px`,
+            threshold: 0 // Trigger as soon as boundary is crossed
         };
 
         const observerCallback = (entries) => {
             entries.forEach(entry => {
                 const id = entry.target.getAttribute('id');
-                const correspondingLink = document.querySelector(`.nav-links a[href="#${id}"]`);
+                const correspondingLink = navLinksContainer.querySelector(`a[href="#${id}"]`);
 
                 if (entry.isIntersecting) {
-                    // Remove active class from all links first
-                    navLinks.forEach(link => link.classList.remove('active-link'));
-                    // Add active class to the intersecting link
-                    if (correspondingLink) {
-                        correspondingLink.classList.add('active-link');
-                    }
-                } else {
-                     // Optional: Remove active class when leaving the intersection zone
-                     // if (correspondingLink) {
-                     //     correspondingLink.classList.remove('active-link');
-                     // }
-                     // Note: Removing here might cause brief moments with no active link.
-                     // Keeping active until the next one activates often feels smoother.
-                }
+                     // When a section becomes intersecting, remove active class from all...
+                     navLinks.forEach(link => link.classList.remove('active-link'));
+                     // ...then add it to the corresponding link for the current section
+                     if (correspondingLink) {
+                         correspondingLink.classList.add('active-link');
+                         // console.log(`Activating link for: ${id}`);
+                     }
+                 } else {
+                    // Optional: Only remove if specifically NOT intersecting
+                     // This reduces flickering if multiple entries fire quickly
+                     if (correspondingLink) {
+                         correspondingLink.classList.remove('active-link');
+                     }
+                 }
             });
         };
 
@@ -107,54 +119,57 @@ document.addEventListener('DOMContentLoaded', () => {
         sections.forEach(section => observer.observe(section));
         console.log("Intersection Observer for nav links initialized.");
     } else {
-         console.log("Sections or Nav Links not found for Intersection Observer.");
+         console.warn("Sections or Nav Links missing for Intersection Observer setup.");
     }
 
 
-    // --- Projects Carousel (Ensure robustness) ---
+    // --- Projects Carousel Logic ---
+    const carouselContainer = document.querySelector('.carousel-container');
     const track = document.querySelector('.carousel-track');
-    const cards = track ? Array.from(track.children) : [];
-    const nextButton = document.querySelector('.carousel-btn.next');
-    const prevButton = document.querySelector('.carousel-btn.prev');
+    const nextButton = carouselContainer ? carouselContainer.querySelector('.carousel-btn.next') : null;
+    const prevButton = carouselContainer ? carouselContainer.querySelector('.carousel-btn.prev') : null;
+    let cards = track ? Array.from(track.children) : [];
     let cardWidth = 0;
     let visibleCards = 1;
     let currentIndex = 0;
-    let carouselContainer = document.querySelector('.carousel-container'); // Added
+    let isCarouselInitialized = false;
 
-    function calculateCarousel() {
-        if (cards.length > 0 && track && carouselContainer) {
-            const cardStyle = window.getComputedStyle(cards[0]);
-            const cardMarginRight = parseFloat(cardStyle.marginRight) || 0; // Handle potential NaN
-            cardWidth = cards[0].offsetWidth + cardMarginRight;
+    function calculateCarouselMetrics() {
+        if (!track || cards.length === 0 || !carouselContainer) return;
 
-             const containerWidth = carouselContainer.offsetWidth; // Use container for calculation
-             // Adjust calculation slightly to better handle partial cards if desired,
-             // or keep floor for whole cards only.
-            visibleCards = Math.max(1, Math.floor(containerWidth / cardWidth));
-            // Ensure current index is valid after resize
-            const maxIndex = Math.max(0, cards.length - visibleCards);
-            currentIndex = Math.min(currentIndex, maxIndex);
+        const cardStyle = window.getComputedStyle(cards[0]);
+        const cardMarginRight = parseFloat(cardStyle.marginRight) || 0;
+        // Use offsetWidth for reliable width including padding/border
+        cardWidth = cards[0].offsetWidth + cardMarginRight;
 
-            console.log(`Recalculated: cardWidth=${cardWidth}, visible=${visibleCards}, maxIndex=${maxIndex}, currentIndex=${currentIndex}`);
-
-        }
+        const containerWidth = carouselContainer.offsetWidth;
+        visibleCards = Math.max(1, Math.floor(containerWidth / cardWidth));
     }
 
     function updateCarouselUI() {
-        if (track && cards.length > 0) {
-            const maxIndex = Math.max(0, cards.length - visibleCards);
-             // Adjust index before transform
-             currentIndex = Math.max(0, Math.min(currentIndex, maxIndex));
+        if (!track || cards.length === 0 || !prevButton || !nextButton) return;
 
-            track.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+        const maxIndex = Math.max(0, cards.length - visibleCards);
+        currentIndex = Math.max(0, Math.min(currentIndex, maxIndex)); // Clamp index
 
-            if (prevButton) prevButton.disabled = currentIndex === 0;
-            if (nextButton) nextButton.disabled = currentIndex >= maxIndex;
-             console.log(`UI Updated: Translating to -${currentIndex * cardWidth}px, prevDisabled=${prevButton?.disabled}, nextDisabled=${nextButton?.disabled}`);
-        }
+        track.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+
+        prevButton.disabled = currentIndex === 0;
+        nextButton.disabled = currentIndex >= maxIndex;
+
+        // Add visual styles for disabled buttons if desired in CSS (e.g., opacity)
+        prevButton.style.opacity = prevButton.disabled ? '0.5' : '1';
+        nextButton.style.opacity = nextButton.disabled ? '0.5' : '1';
     }
 
-    if (track && cards.length > 0 && nextButton && prevButton && carouselContainer) {
+    function initializeCarousel() {
+        if (isCarouselInitialized || !track || cards.length === 0 || !nextButton || !prevButton) {
+             if (!isCarouselInitialized) console.warn("Carousel elements missing or empty, initialization skipped.");
+             return;
+         }
+
+        console.log("Initializing Projects carousel...");
+
         nextButton.addEventListener('click', () => {
              const maxIndex = Math.max(0, cards.length - visibleCards);
              if (currentIndex < maxIndex) {
@@ -170,27 +185,24 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-        // Recalculate on resize (with debounce/throttle if performance is an issue later)
+        // Recalculate on resize using debounce
          let resizeTimeout;
         window.addEventListener('resize', () => {
              clearTimeout(resizeTimeout);
              resizeTimeout = setTimeout(() => {
-                 console.log("Resizing carousel...");
-                calculateCarousel();
+                calculateCarouselMetrics();
                 updateCarouselUI();
-            }, 250); // Wait 250ms after last resize event
+            }, 250); // Adjust delay as needed
         });
 
-
-        // Initial calculation & update
-        calculateCarousel(); // Calculate initial state
-        updateCarouselUI(); // Update UI based on calculation
-
-        console.log("Projects carousel initialized with resize handling.");
-
-    } else {
-         console.log("Carousel elements missing or empty, initialization skipped.");
+        // Initial Setup
+        calculateCarouselMetrics();
+        updateCarouselUI();
+        isCarouselInitialized = true; // Mark as initialized
+         console.log("Projects carousel initialized successfully.");
     }
+
+    initializeCarousel(); // Try to initialize on load
 
     // --- Contact Form Validation ---
     const contactForm = document.getElementById('contact-form');
@@ -201,47 +213,51 @@ document.addEventListener('DOMContentLoaded', () => {
             const nameInput = document.getElementById('name');
             const emailInput = document.getElementById('email');
             const messageInput = document.getElementById('message');
-            const name = nameInput ? nameInput.value.trim() : '';
-            const email = emailInput ? emailInput.value.trim() : '';
-            const message = messageInput ? messageInput.value.trim() : '';
+            let isValid = true; // Assume valid initially
 
-            let isValid = true;
+            // --- Clear previous errors ---
+            [nameInput, emailInput, messageInput].forEach(input => {
+                if (input) input.classList.remove('input-error');
+                // Also clear any previous inline error messages if added
+                const errorSpan = input?.parentNode.querySelector('.error-message');
+                if(errorSpan) errorSpan.textContent = '';
+            });
 
-            // Reset previous errors if any visually indicated
-            // (Example: remove error classes if added)
-            nameInput?.classList.remove('input-error');
-            emailInput?.classList.remove('input-error');
-            messageInput?.classList.remove('input-error');
-
-            if (name === '') {
-                 alert('Please enter your name.');
-                 nameInput?.classList.add('input-error'); // Optional visual cue
+            // --- Validate ---
+            if (!nameInput || nameInput.value.trim() === '') {
+                 alert('Please enter your name.'); // Alert is fallback, prefer inline errors
+                 nameInput?.classList.add('input-error');
                  isValid = false;
             }
-             if (email === '') {
+            if (!emailInput || emailInput.value.trim() === '') {
                  alert('Please enter your email address.');
                  emailInput?.classList.add('input-error');
                  isValid = false;
-             } else if (!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email)) {
+            } else if (!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(emailInput.value.trim())) {
                 alert('Please enter a valid email address.');
                  emailInput?.classList.add('input-error');
                  isValid = false;
-             }
-             if (message === '') {
+            }
+             if (!messageInput || messageInput.value.trim() === '') {
                 alert('Please enter a message.');
                 messageInput?.classList.add('input-error');
                 isValid = false;
             }
 
-
+            // --- Submit ---
             if (isValid) {
-                // Placeholder for actual submission
-                console.log('Form data ready for submission:', { name, email, message });
-                alert(`Thank you, ${name}! Your message has been submitted (placeholder response).`);
-                contactForm.reset();
+                console.log('Form data (Simulation):', {
+                    name: nameInput.value.trim(),
+                    email: emailInput.value.trim(),
+                    message: messageInput.value.trim()
+                });
+                alert(`Thank you, ${nameInput.value.trim()}! Your message has been submitted (placeholder response).`);
+                contactForm.reset(); // Clear the form
             }
         });
-        console.log("Contact form enhanced validation script loaded.");
+        console.log("Contact form validation script enhanced.");
+    } else {
+         console.warn("Contact form not found.");
     }
 
 
@@ -251,6 +267,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // --- Final Log ---
-    console.log("Main script loaded and initialized.");
+    console.log("Main script execution complete.");
 
 }); // End DOMContentLoaded
