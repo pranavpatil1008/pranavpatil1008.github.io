@@ -4,220 +4,274 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pranav Patil - Portfolio</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-      @font-face {
-        font-family: 'LucideIcons';
-        src: url(https://cdn.jsdelivr.net/npm/lucide-static@latest/font/Lucide.ttf) format('truetype');
-      }
-      .lucide {
-        font-family: 'LucideIcons';
-        font-size: 1.25rem; /* Adjust icon size as needed */
-        line-height: 1;
-        display: inline-block;
-        /* Prevent icon selection */
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-      }
-      /* Define icon content using CSS pseudo-elements */
-      /* Find codes at https://lucide.dev/ */
-      .lucide-mail:before { content: "\e22b"; }
-      .lucide-github:before { content: "\e1b2"; }
-      .lucide-globe:before { content: "\e1c6"; }
-      .lucide-user:before { content: "\e45a"; }
-      .lucide-briefcase:before { content: "\e0e5"; }
-      .lucide-graduation-cap:before { content: "\e1d1"; }
-      .lucide-code:before { content: "\e11b"; }
-      .lucide-lightbulb:before { content: "\e213"; }
-      .lucide-star:before { content: "\e3f6"; }
-      .lucide-languages:before { content: "\e20a"; }
-      .lucide-bar-chart-3:before { content: "\e087"; } /* For Analysis */
-      .lucide-shield-check:before { content: "\e3b7"; } /* For Intelligence */
-      .lucide-paintbrush:before { content: "\e2b2"; } /* For Design */
-      .lucide-settings:before { content: "\e3a1"; } /* For Management/Process */
-      .lucide-brain-circuit:before { content: "\e555"; } /* For AI */
-      .lucide-wrench:before { content: "\e487"; } /* For Other Tools */
-      .lucide-message-circle:before { content: "\e246"; } /* For Soft Skills */
-    </style>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    },
-                }
-            }
-        }
-    </script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body class="bg-gray-100 font-sans text-gray-800">
+<body>
 
-    <header class="bg-gradient-to-r from-blue-600 to-indigo-700 text-white p-12 shadow-lg rounded-b-lg">
-        <div class="container mx-auto text-center">
-            <h1 class="text-4xl md:text-5xl font-bold mb-2">Pranav Patil</h1>
-            <p class="text-xl md:text-2xl text-indigo-200 mb-6">M.S. Information Science Student | IT Leadership Specialization</p>
-            <div class="flex justify-center space-x-6 text-lg">
-                <a href="mailto:pranavpatil7799@gmail.com" class="flex items-center hover:text-indigo-300 transition duration-300">
-                    <span class="lucide lucide-mail mr-2"></span> pranavpatil7799@gmail.com
-                </a>
-                <a href="https://github.com/pranavpatil1008" target="_blank" rel="noopener noreferrer" class="flex items-center hover:text-indigo-300 transition duration-300">
-                    <span class="lucide lucide-github mr-2"></span> GitHub
-                </a>
-                <a href="https://pranavpatil1008.github.io/" target="_blank" rel="noopener noreferrer" class="flex items-center hover:text-indigo-300 transition duration-300">
-                    <span class="lucide lucide-globe mr-2"></span> Portfolio
-                </a>
-                </div>
+    <!-- Navigation (Prompt #1 & #12 adjustments) -->
+    <nav class="navbar">
+        <div class="nav-brand">Pranav Patil</div>
+        <div class="hamburger">☰</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#leadership">Leadership & Affiliations</a></li>
+            <li><a href="#blog">Blog</a></li>
+            <li><a href="#tools">Tools/Resources</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li class="placeholder">More sections TBD</li>
+        </ul>
+    </nav>
+
+    <!-- Home (Prompt #2) -->
+    <section id="home" class="home-section section">
+        <div class="home-content">
+            <h1>Welcome to my digital hub!</h1>
+            <p>I’m Pranav Patil, an Information Science Master’s student at Indiana University, blending data analysis, tech innovation, and leadership to solve real-world challenges. Explore my projects, skills, and journey—let’s connect!</p>
+            <div class="buttons">
+                <a href="#projects" class="btn">View Projects</a>
+                <a href="#contact" class="btn">Get in Touch</a>
+            </div>
+            <p class="placeholder">Hero video or interactive banner coming soon—stay tuned for a dynamic intro!</p>
         </div>
-    </header>
+    </section>
 
-    <main class="container mx-auto p-6 md:p-10">
+    <!-- About Me (Prompt #3) -->
+    <section id="about" class="about-section section">
+        <div class="about-content">
+            <h2>About Me</h2>
+            <p>I’m a driven and adaptable graduate student pursuing an M.S. in Information Science, set to graduate in December 2025. With a foundation in data analysis, disinformation research, and human-centered computing, I’ve honed skills in Python, Tableau, and Unreal Engine 5. My journey spans managing 100+ staff at Indiana University, founding a real estate consultancy in India, and diving into intelligence studies like hybrid warfare. Fluent in English, Hindi, and Marathi, I’m passionate about emerging tech—especially AI—and thrive in high-pressure environments. More about my story and interests to come!</p>
+            <p class="placeholder">Detailed personal interests, AI reflections, and a downloadable bio PDF TBD.</p>
+        </div>
+    </section>
 
-        <section id="about" class="mb-12 bg-white p-8 rounded-lg shadow-md">
-            <h2 class="text-3xl font-semibold mb-4 border-b-2 border-blue-500 pb-2 flex items-center"><span class="lucide lucide-user mr-3 text-blue-600"></span>About Me</h2>
-            <p class="text-lg leading-relaxed text-gray-700">
-                Adaptable and driven Master’s student in Information Science (MIS) with an IT Leadership Specialization at Indiana University. Strong foundation in data analysis, disinformation research, and intelligence studies. Experienced in using tools like Python and Tableau to extract insights, managing projects, and analyzing business processes. Demonstrated leadership in high-pressure environments and possess a deep curiosity for emerging technologies, including AI applications. Fast learner with an analytical mindset, highly adaptive, and an excellent communicator seeking to apply skills in a dynamic environment.
-            </p>
-        </section>
+    <!-- Education (Prompt #4) -->
+    <section id="education" class="education-section section">
+        <div class="education-content">
+            <h2>Education</h2>
+            <div class="degree">
+                <h3>M.S. in Information Science (Expected Dec 2025)</h3>
+                <p>Indiana University, Luddy School of Informatics, GPA 3.838</p>
+                <p>Specialization: Information Technology Leadership</p>
+                <p>Key Coursework:</p>
+                <ul>
+                    <li>Systems Analysis & Design</li>
+                    <li>Information Visualization</li>
+                    <li>Database Design</li>
+                    <li>Social Media Mining</li>
+                    <li>Human-Computer Interaction</li>
+                    <li>Org Info & Economics Security</li>
+                    <li>Capstone in Info and Lib Sci (in progress)</li>
+                </ul>
+            </div>
+            <div class="degree">
+                <h3>B.A. in Management and Human Organization / Human-Centered Computing (Dec 2022)</h3>
+                <p>Indiana University, College of Arts & Sciences</p>
+            </div>
+            <p class="placeholder">Capstone project summary and additional coursework details coming soon.</p>
+        </div>
+    </section>
 
-        <section id="skills" class="mb-12 bg-white p-8 rounded-lg shadow-md">
-            <h2 class="text-3xl font-semibold mb-6 border-b-2 border-blue-500 pb-2 flex items-center"><span class="lucide lucide-star mr-3 text-blue-600"></span>Skills</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="bg-gray-50 p-4 rounded-md border border-gray-200">
-                    <h3 class="text-xl font-medium mb-2 flex items-center"><span class="lucide lucide-bar-chart-3 mr-2 text-indigo-600"></span>Programming/Analysis</h3>
-                    <p class="text-gray-600">Python, Tableau, NVivo, Jupyter, Gephi</p>
+    <!-- Experience (Prompt #5) -->
+    <section id="experience" class="experience-section section">
+        <div class="experience-content">
+            <h2>Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h3><span class="date">May 2019 – Oct 2024</span>Assistant Manager</h3>
+                    <p>Residential Programs and Services, IMU, Forest Dining – Bloomington, IN</p>
+                    <ul>
+                        <li>Managed and mentored 100+ student staff across shifts</li>
+                        <li>Streamlined workflows under dynamic campus demands</li>
+                        <li>Raised service standards through feedback-driven improvements</li>
+                    </ul>
                 </div>
-                <div class="bg-gray-50 p-4 rounded-md border border-gray-200">
-                    <h3 class="text-xl font-medium mb-2 flex items-center"><span class="lucide lucide-shield-check mr-2 text-indigo-600"></span>Research & Intelligence</h3>
-                    <p class="text-gray-600">Disinformation analysis, hybrid warfare, deception studies</p>
+                <div class="timeline-item">
+                    <h3><span class="date">May 2017 – Present</span>Founder & Consultant</h3>
+                    <p>Radha Madhav Buildcon Ltd. – Pune, MH, India</p>
+                    <ul>
+                        <li>Launched a real estate consultancy, secured land assets</li>
+                        <li>Brokered deals with clients like CBRE Group</li>
+                        <li>Managed cross-border communications during the pandemic</li>
+                        <li>Currently raising capital for residential projects</li>
+                    </ul>
                 </div>
-                 <div class="bg-gray-50 p-4 rounded-md border border-gray-200">
-                    <h3 class="text-xl font-medium mb-2 flex items-center"><span class="lucide lucide-paintbrush mr-2 text-indigo-600"></span>Visualization & Design</h3>
-                    <p class="text-gray-600">Tableau, Gephi, Unreal Engine 5</p>
-                </div>
-                 <div class="bg-gray-50 p-4 rounded-md border border-gray-200">
-                    <h3 class="text-xl font-medium mb-2 flex items-center"><span class="lucide lucide-settings mr-2 text-indigo-600"></span>Management & Process</h3>
-                    <p class="text-gray-600">Project Management, Business Process Analysis</p>
-                </div>
-                 <div class="bg-gray-50 p-4 rounded-md border border-gray-200">
-                    <h3 class="text-xl font-medium mb-2 flex items-center"><span class="lucide lucide-brain-circuit mr-2 text-indigo-600"></span>AI</h3>
-                    <p class="text-gray-600">Utilizing AI tools for development and task execution</p>
-                </div>
-                 <div class="bg-gray-50 p-4 rounded-md border border-gray-200">
-                    <h3 class="text-xl font-medium mb-2 flex items-center"><span class="lucide lucide-wrench mr-2 text-indigo-600"></span>Other Tools</h3>
-                    <p class="text-gray-600">GitHub, Notion, Google Workspace, Adobe Acrobat</p>
-                </div>
-                 <div class="bg-gray-50 p-4 rounded-md border border-gray-200 col-span-1 md:col-span-2 lg:col-span-3">
-                    <h3 class="text-xl font-medium mb-2 flex items-center"><span class="lucide lucide-message-circle mr-2 text-indigo-600"></span>Soft Skills</h3>
-                    <p class="text-gray-600">Fast learner, analytical mindset, highly adaptive, excellent communicator, problem-solving, initiative</p>
+                <div class="timeline-item">
+                    <h3><span class="date">Feb 2023 – July 2023</span>Manager</h3>
+                    <p>Developmental Services Inc. – Bloomington, IN</p>
+                    <ul>
+                        <li>Oversaw group homes, led care teams</li>
+                        <li>Developed personalized care plans</li>
+                        <li>Ensured compliance with state regulations</li>
+                    </ul>
                 </div>
             </div>
-        </section>
+            <p class="placeholder">Full case studies, metrics (e.g., team size growth), and additional roles TBD.</p>
+        </div>
+    </section>
 
-        <section id="projects" class="mb-12 bg-white p-8 rounded-lg shadow-md">
-            <h2 class="text-3xl font-semibold mb-6 border-b-2 border-blue-500 pb-2 flex items-center"><span class="lucide lucide-lightbulb mr-3 text-blue-600"></span>Projects</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="border border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition duration-300">
-                    <img src="https://placehold.co/600x400/3b82f6/ffffff?text=Unreal+Engine+Sim" alt="Unreal Engine Simulation Project Placeholder" class="w-full h-48 object-cover">
-                    <div class="p-4">
-                        <h3 class="text-xl font-medium mb-2">Unreal Engine Simulation</h3>
-                        <p class="text-gray-600 text-sm mb-2">Simulated Arctic climate impacts in a 3D educational environment.</p>
-                        <span class="inline-block bg-blue-100 text-blue-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded">Unreal Engine 5</span>
-                         <span class="inline-block bg-gray-100 text-gray-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded">Simulation</span>
-                    </div>
+    <!-- Skills (Prompt #6) -->
+    <section id="skills" class="skills-section section">
+        <div class="skills-content">
+            <h2>Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Technical</h3>
+                    <ul>
+                        <li>Python</li> <li>SQL</li> <li>Neo4j</li> <li>Tableau</li>
+                        <li>NVivo</li> <li>Jupyter</li> <li>Gephi</li> <li>Unreal Engine 5</li>
+                    </ul>
                 </div>
-                <div class="border border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition duration-300">
-                    <img src="https://placehold.co/600x400/10b981/ffffff?text=Cybersecurity+Game" alt="Cybersecurity Game Project Placeholder" class="w-full h-48 object-cover">
-                    <div class="p-4">
-                        <h3 class="text-xl font-medium mb-2">"Operation Intel" Game</h3>
-                        <p class="text-gray-600 text-sm mb-2">Interactive game teaching cybersecurity principles.</p>
-                         <span class="inline-block bg-green-100 text-green-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded">Cybersecurity</span>
-                         <span class="inline-block bg-gray-100 text-gray-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded">GameDev</span>
-                         <span class="inline-block bg-gray-100 text-gray-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded">Education</span>
-                    </div>
+                <div class="skill-category">
+                    <h3>Research</h3>
+                    <ul>
+                        <li>Disinformation analysis</li> <li>Hybrid warfare</li> <li>Deception studies</li>
+                    </ul>
                 </div>
-                <div class="border border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition duration-300">
-                     <img src="https://placehold.co/600x400/8b5cf6/ffffff?text=Data+Viz+Project" alt="Data Visualization Project Placeholder" class="w-full h-48 object-cover">
-                    <div class="p-4">
-                        <h3 class="text-xl font-medium mb-2">Basketball Trends Viz</h3>
-                        <p class="text-gray-600 text-sm mb-2">Visualized U.S. basketball participation trends & COVID-19 impact.</p>
-                         <span class="inline-block bg-purple-100 text-purple-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded">Data Visualization</span>
-                         <span class="inline-block bg-gray-100 text-gray-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded">Tableau</span>
-                         <span class="inline-block bg-gray-100 text-gray-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded">Gephi</span>
-                    </div>
+                <div class="skill-category">
+                    <h3>Soft Skills</h3>
+                    <ul>
+                        <li>Leadership</li> <li>Adaptability</li> <li>Problem-solving</li>
+                        <li>Communication</li> <li>Fast learning</li>
+                    </ul>
                 </div>
             </div>
-        </section>
+            <p class="placeholder">Certifications (e.g., Python or Tableau), skill proficiency levels, and demo snippets coming soon.</p>
+        </div>
+    </section>
 
-        <section id="experience" class="mb-12 bg-white p-8 rounded-lg shadow-md">
-            <h2 class="text-3xl font-semibold mb-6 border-b-2 border-blue-500 pb-2 flex items-center"><span class="lucide lucide-briefcase mr-3 text-blue-600"></span>Experience</h2>
-            <div class="space-y-6">
-                <div>
-                    <h3 class="text-xl font-medium">Assistant Manager</h3>
-                    <p class="text-indigo-600 font-semibold">Residential Programs and Services, IMU, Forest Dinning - Bloomington, IN</p>
-                    <p class="text-gray-500 text-sm">May 2019 – Oct 2024</p>
-                    <p class="text-gray-700 mt-1">Managed and mentored 100+ staff, resolved operational challenges, streamlined workflows, and improved service standards.</p>
+    <!-- Projects (Prompt #7) -->
+    <section id="projects" class="projects-section section">
+        <div class="projects-content">
+            <h2>Projects</h2>
+            <div class="carousel">
+                <div class="carousel-track">
+                    <div class="project-card">
+                        <h3>Unreal Engine Simulation Project</h3>
+                        <p>Developed a 3D educational environment simulating Arctic climate impacts, leveraging asset imports and configuration for immersive insights.</p>
+                        <a href="#" class="btn">Learn More</a>
+                    </div>
+                    <div class="project-card">
+                        <h3>Operation Intel (Cybersecurity Game)</h3>
+                        <p>Created an interactive game to teach cybersecurity principles through engaging gameplay, emphasizing user education.</p>
+                        <a href="#" class="btn">Learn More</a>
+                    </div>
+                    <div class="project-card">
+                        <h3>U.S. Basketball Trends Visualization</h3>
+                        <p>Analyzed demographic trends in basketball participation using Tableau and Gephi, identifying COVID-19 impacts.</p>
+                        <a href="#" class="btn">Learn More</a>
+                    </div>
+                    <!-- Placeholder cards -->
+                    <div class="project-card placeholder-card">
+                        <h3>Project TBD 1</h3>
+                        <p>Details coming soon.</p>
+                    </div>
+                    <div class="project-card placeholder-card">
+                        <h3>Project TBD 2</h3>
+                        <p>Details coming soon.</p>
+                    </div>
+                     <div class="project-card placeholder-card">
+                        <h3>Project TBD 3</h3>
+                        <p>Details coming soon.</p>
+                    </div>
                 </div>
-                 <div>
-                    <h3 class="text-xl font-medium">Founder & Real Estate Consultant</h3>
-                    <p class="text-indigo-600 font-semibold">Radha Madhav Buildcon Ltd. - Pune, MH, India</p>
-                    <p class="text-gray-500 text-sm">May 2017 – Present</p>
-                     <p class="text-gray-700 mt-1">Provided consultancy, built client relationships (e.g., CBRE Group), founded company, secured land, currently raising capital for development.</p>
-                </div>
-                 <div>
-                    <h3 class="text-xl font-medium">Manager</h3>
-                    <p class="text-indigo-600 font-semibold">Developmental Services Inc. (DSI) - Bloomington, IN</p>
-                    <p class="text-gray-500 text-sm">Feb 2023 – July 2023</p>
-                     <p class="text-gray-700 mt-1">Managed group home operations, led care teams, developed care plans, managed budgets, ensured compliance.</p>
-                </div>
+                 <button class="carousel-btn prev" aria-label="Previous Project">❮</button>
+                 <button class="carousel-btn next" aria-label="Next Project">❯</button>
             </div>
-        </section>
+             <p class="placeholder">Full case studies, screenshots, videos, and 10+ additional projects (e.g., Canvas work, capstone) to be added.</p>
+        </div>
+    </section>
 
-        <section id="education" class="mb-12 bg-white p-8 rounded-lg shadow-md">
-            <h2 class="text-3xl font-semibold mb-6 border-b-2 border-blue-500 pb-2 flex items-center"><span class="lucide lucide-graduation-cap mr-3 text-blue-600"></span>Education</h2>
-             <div class="space-y-4">
-                <div>
-                    <h3 class="text-xl font-medium">M.S. in Information Science (MIS)</h3>
-                     <p class="text-gray-500 text-sm mb-1">Information Technology Leadership Specialization</p>
-                    <p class="text-indigo-600 font-semibold">Indiana University, Luddy School of Informatics, Computing, and Engineering</p>
-                    <p class="text-gray-500 text-sm">Expected Dec 2025 | GPA: 3.838</p>
-                </div>
-                 <div>
-                    <h3 class="text-xl font-medium">B.A. in Management and Human Organization / Human-Centered Computing</h3>
-                    <p class="text-indigo-600 font-semibold">Indiana University</p>
-                    <p class="text-gray-500 text-sm">Dec 2022</p>
-                </div>
-             </div>
-        </section>
-
-         <section id="languages" class="bg-white p-8 rounded-lg shadow-md">
-            <h2 class="text-3xl font-semibold mb-4 border-b-2 border-blue-500 pb-2 flex items-center"><span class="lucide lucide-languages mr-3 text-blue-600"></span>Languages</h2>
-            <ul class="list-disc list-inside text-gray-700 space-y-1">
-                <li>English (Fluent)</li>
-                <li>Hindi (Native)</li>
-                <li>Marathi (Native)</li>
+    <!-- Leadership & Affiliations (Prompt #8) -->
+    <section id="leadership" class="leadership-section section">
+        <div class="leadership-content">
+            <h2>Leadership & Affiliations</h2>
+            <ul class="leadership-list">
+                <li>
+                    <h3>Student Representative, MIS Curriculum Committee (2024–2025)</h3>
+                    <p>Indiana University – Contributed to program development.</p>
+                </li>
+                <li>
+                    <h3>Undergraduate Research and Investment Club (Jan 2019 – Dec 2022)</h3>
+                    <p>Organized stock trading competitions, coached technical analysis.</p>
+                </li>
+                <li>
+                    <h3>Event Coordinator, Animal Club (Aug 2019 – Dec 2022)</h3>
+                    <p>Facilitated shelter volunteer work, performed facility upgrades.</p>
+                </li>
             </ul>
-        </section>
+            <p class="placeholder">Detailed impact stories and additional affiliations TBD.</p>
+        </div>
+    </section>
 
-    </main>
-
-    <footer class="bg-gray-800 text-gray-400 text-center p-6 mt-12 rounded-t-lg">
-        <p>&copy; 2025 Pranav Patil. All rights reserved.</p>
-        <p class="text-sm mt-1">Built with HTML & Tailwind CSS</p>
-         <div class="flex justify-center space-x-4 mt-4">
-                <a href="mailto:pranavpatil7799@gmail.com" class="hover:text-white transition duration-300">
-                    <span class="lucide lucide-mail"></span>
-                </a>
-                <a href="https://github.com/pranavpatil1008" target="_blank" rel="noopener noreferrer" class="hover:text-white transition duration-300">
-                    <span class="lucide lucide-github"></span>
-                </a>
-                <a href="https://pranavpatil1008.github.io/" target="_blank" rel="noopener noreferrer" class="hover:text-white transition duration-300">
-                    <span class="lucide lucide-globe"></span>
-                </a>
+    <!-- Blog (Prompt #9) -->
+    <section id="blog" class="blog-section section">
+        <div class="blog-content">
+            <h2>Blog</h2>
+            <div class="blog-card">
+                <p>A future space for insights on tech trends, data analysis, disinformation, and leadership lessons from my journey.</p>
+                <div class="overlay">Coming Soon</div>
             </div>
-    </footer>
+            <p class="placeholder">Initial posts, categories (e.g., Tech, Research), and commenting system coming soon.</p>
+        </div>
+    </section>
 
+    <!-- Tools/Resources (Prompt #10) -->
+    <section id="tools" class="tools-section section">
+        <div class="tools-content">
+            <h2>Tools/Resources</h2>
+            <p>A planned hub for interactive tools and resources, including Tableau dashboards, code snippets, and project templates.</p>
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <h3>Coming Soon</h3> <p>Tool TBD</p>
+                </div>
+                <div class="tool-card">
+                    <h3>Coming Soon</h3> <p>Tool TBD</p>
+                </div>
+                <div class="tool-card">
+                    <h3>Coming Soon</h3> <p>Tool TBD</p>
+                </div>
+            </div>
+            <p class="placeholder">Specific tools (e.g., Basketball Viz embed), downloadable assets, and tutorials TBD.</p>
+        </div>
+    </section>
+
+    <!-- Contact (Prompt #11) -->
+    <section id="contact" class="contact-section section">
+        <div class="contact-content">
+            <h2>Contact</h2>
+            <p>Reach me at (765) 479-9760 or <a href="mailto:patilp@iu.edu">patilp@iu.edu</a>. Current portfolio: <a href="https://pranavpatil1008.github.io" target="_blank" rel="noopener noreferrer">https://pranavpatil1008.github.io</a>.</p>
+            <p>Use the form below to send a message!</p>
+            <form id="contact-form">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn">Submit</button>
+            </form>
+            <p class="placeholder">Social media links (LinkedIn, GitHub), map embed, and response confirmation TBD.</p>
+        </div>
+    </section>
+
+    <!-- Placeholder for CMS Integration (from Prompt #12) -->
+    <div class="cms-placeholder" style="display:none;">CMS integration TBD for dynamic content updates.</div>
+
+    <!-- JavaScript File -->
+    <script src="script.js"></script>
 </body>
 </html>
