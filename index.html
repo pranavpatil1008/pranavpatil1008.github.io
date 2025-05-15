@@ -52,11 +52,11 @@
             height: 40px; /* Adjust as needed */
             margin-top: 10px;
         }
-        .drive-link {
+        .drive-link { /* This class is used for local PDF links now too */
             display: inline-block;
             margin-top: 0.5rem;
             padding: 0.5rem 1rem;
-            background-color: #4285F4; /* Google Drive Blue */
+            background-color: #4285F4; /* Google Drive Blue - or a generic blue for PDF links */
             color: white;
             text-decoration: none;
             border-radius: 0.25rem;
@@ -283,7 +283,7 @@
                             <div>
                                 <h5 class="text-lg font-semibold text-gray-800">Systems Analysis & Design (ILS-Z 556)</h5>
                                 <p class="text-gray-700 mt-1 mb-2">Led a team project focused on Systems Analysis and Design, proposing graph database solutions for real-world case studies. This included designing a system for NewYork Presbyterian Hospital to track and prevent infection spread using Neo4j to model spatial-temporal event data, and a system for SITA to manage lost and found property at airports by efficiently matching items to passenger reports.</p>
-                                <a href="https://drive.google.com/file/d/1dZoTPOM_CH_Tu0gZ2lbtLJR2L5dhpl9C/view?usp=sharing" target="_blank" class="drive-link">View Project Presentation</a>
+                                <a href="Assets/Presentation PDF/SYSTEMS ANALYSIS & DESIGN.pdf" target="_blank" class="drive-link">View Project Presentation</a>
                             </div>
                             <div>
                                 <h5 class="text-lg font-semibold text-gray-800">Information Visualization (ILS-Z 637)</h5>
@@ -292,7 +292,7 @@
                             <div>
                                 <h5 class="text-lg font-semibold text-gray-800">Database Design (ILS-Z 511)</h5>
                                 <p class="text-gray-700 mt-1 mb-2">Designed and documented a relational database for 'GAP Inc.,' a conceptual digital music distribution platform. The project involved creating an Entity-Relationship Diagram (EERD), defining a relational schema, and outlining data management processes to handle artists, albums, tracks, sales, and user playlists. This project emphasized ensuring data integrity and efficient querying for various stakeholders in the music industry.</p>
-                                <a href="https://drive.google.com/file/d/1Hro5_LAwopQwbuJ0nA33Dte0LnQZkl-h/view?usp=share_link" target="_blank" class="drive-link">View Project Report</a>
+                                <a href="Assets/Papers/Database Design.pdf" target="_blank" class="drive-link">View Project Report</a>
                             </div>
                             <div>
                                 <h5 class="text-lg font-semibold text-gray-800">Social Media Mining (ILS-Z 639)</h5>
@@ -300,15 +300,15 @@
                                 <ul class="list-disc list-inside ml-4 space-y-3 text-gray-700 mt-2">
                                     <li>
                                         "Reddit Sentiment as a Predictor for Market Corrections and Rallies" - Analyzed Reddit discussions to identify sentiment shifts preceding significant stock market movements.
-                                        <a href="https://drive.google.com/file/d/1hRGsv9v-w9gWtALJrtkfTBkhM-xLHoFb/view?usp=sharing" target="_blank" class="drive-link ml-2 mt-1">View Paper</a>
+                                        <a href="Assets/Papers/Social Media Mining/Paper 1.pdf" target="_blank" class="drive-link ml-2 mt-1">View Paper</a>
                                     </li>
                                     <li>
                                         "Framing the Narrative: Media Bias in the Coverage of Elon Musk Before and After Trump’s Support" - Investigated changes in media portrayal and public sentiment towards Elon Musk across news and social platforms.
-                                        <a href="https://drive.google.com/file/d/1MjP99zGl5u8hyMOfKG0JAH6rgmZZlQeV/view?usp=sharing" target="_blank" class="drive-link ml-2 mt-1">View Paper</a>
+                                        <a href="Assets/Papers/Social Media Mining/Paper 2.pdf" target="_blank" class="drive-link ml-2 mt-1">View Paper</a>
                                     </li>
                                     <li>
                                         "Strategic Discourse and Public Perception: Nuclear Rhetoric, Military Aid, and the Russia-Ukraine War" - Examined how differing official communications influenced public discourse and sentiment on Twitter (X).
-                                        <a href="https://drive.google.com/file/d/1DEcxLjFZcIlbZPgUoK_wMxL87rdplzFi/view?usp=sharing" target="_blank" class="drive-link ml-2 mt-1">View Paper</a>
+                                        <a href="Assets/Papers/Social Media Mining/Paper 3.pdf" target="_blank" class="drive-link ml-2 mt-1">View Paper</a>
                                     </li>
                                 </ul>
                             </div>
@@ -368,8 +368,6 @@
                 if (targetElement) {
                     // Calculate the position of the target element relative to the document
                     const navHeight = document.querySelector('nav').offsetHeight; // Get nav height
-                    // const elementPosition = targetElement.getBoundingClientRect().top; // Position relative to viewport
-                    // const offsetPosition = elementPosition + window.pageYOffset - navHeight; // Corrected offset
                     
                     // Alternative calculation for offset, sometimes more reliable
                     let elementPosition = targetElement.offsetTop; // Position relative to the offsetParent
