@@ -52,23 +52,24 @@
             height: 40px; /* Adjust as needed */
             margin-top: 10px;
         }
-        .drive-link { /* This class is used for local PDF links now too */
-            display: inline-block;
-            margin-top: 0.5rem;
+        /* Styling for PDF/Document links */
+        .drive-link { 
+            display: inline-block; /* Allows margin/padding and doesn't break line */
             padding: 0.5rem 1rem;
             background-color: #4285F4; /* Google Drive Blue - or a generic blue for PDF links */
             color: white;
             text-decoration: none;
-            border-radius: 0.25rem;
+            border-radius: 0.25rem; /* Tailwind's rounded-sm */
             font-size: 0.9em;
             transition: background-color 0.2s;
+            text-align: center; /* Center text if button takes full width */
         }
         .drive-link:hover {
-            background-color: #3367D6;
+            background-color: #3367D6; /* Darker blue on hover */
         }
+        /* Styling for YouTube links, similar to drive-link for consistency */
         .youtube-link {
-             display: inline-block;
-            margin-top: 0.5rem;
+            display: inline-block;
             padding: 0.5rem 1rem;
             background-color: #FF0000; /* YouTube Red */
             color: white;
@@ -76,22 +77,28 @@
             border-radius: 0.25rem;
             font-size: 0.9em;
             transition: background-color 0.2s;
+            text-align: center;
         }
         .youtube-link:hover{
-            background-color: #CC0000;
+            background-color: #CC0000; /* Darker red on hover */
         }
         .profile-pic {
-            width: 150px; /* Adjust size as needed */
-            height: 150px; /* Adjust size as needed */
-            object-fit: cover; /* Ensures the image covers the area without distortion */
+            width: 150px; 
+            height: 150px;
+            object-fit: cover; 
         }
         .project-image {
-            width: 100%; /* Make image take full width of its container */
-            height: 250px; /* Fixed height for all project images */
-            object-fit: contain; /* Contain the entire image within the area, letterboxing if necessary */
-            border-radius: 0.375rem; /* Tailwind's rounded-md */
-            margin-bottom: 1rem; /* Space below the image */
-            background-color: #f9fafb; /* Optional: a light background for the letterbox area, Tailwind gray-50 */
+            width: 100%; 
+            height: 250px; 
+            object-fit: contain; 
+            border-radius: 0.375rem; 
+            margin-bottom: 1rem; 
+            background-color: #f9fafb; 
+        }
+        /* Added class for consistent button container spacing */
+        .button-container {
+            margin-top: 0.75rem; /* Tailwind's mt-3 */
+            margin-bottom: 0.5rem; /* Tailwind's mb-2 */
         }
     </style>
 </head>
@@ -258,23 +265,27 @@
             <section id="projects" class="py-8 px-6 bg-white shadow-md rounded-lg mb-12">
                 <h2 class="text-3xl font-semibold text-gray-700 section-title">Projects</h2>
                 <div class="grid md:grid-cols-1 lg:grid-cols-2 gap-8">
-                    <div class="project-item bg-gray-50 p-6 rounded-lg shadow-sm border border-gray-200">
+                    <div class="project-item bg-gray-50 p-6 rounded-lg shadow-sm border border-gray-200 flex flex-col">
                         <img src="Assets/Pictures/Eleve.png" alt="Elevé App Screenshot" class="project-image" onerror="this.onerror=null; this.src='https://placehold.co/600x250/F3F4F6/9CA3AF?text=Elevé+App';">
                         <h4 class="text-xl font-semibold text-blue-600 mb-2">Elevé - iOS App (Master's Capstone Project)</h4>
-                        <p class="mb-3">Developed "Elevé," an iOS application focused on daily quotes and mood insights, as my Master's Capstone project (ILS-Z 690). Built using Xcode and Swift, the app aims to provide users with daily inspiration and a simple way to track and reflect on their mood. Expected completion: Fall 2025.</p>
-                        <p><em>Technologies:</em> <span class="tag">iOS Development</span> <span class="tag">Xcode</span> <span class="tag">Swift</span> <span class="tag">UI/UX Design</span> <span class="tag">Capstone Project</span></p>
-                        <a href="https://apps.apple.com/us/app/elev%C3%A9/id6745745397" target="_blank" class="inline-block mt-3">
-                            <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" class="app-store-badge">
-                        </a>
+                        <p class="mb-3 flex-grow">Developed "Elevé," an iOS application focused on daily quotes and mood insights, as my Master's Capstone project (ILS-Z 690). Built using Xcode and Swift, the app aims to provide users with daily inspiration and a simple way to track and reflect on their mood. Expected completion: Fall 2025.</p>
+                        <p class="mb-3"><em>Technologies:</em> <span class="tag">iOS Development</span> <span class="tag">Xcode</span> <span class="tag">Swift</span> <span class="tag">UI/UX Design</span> <span class="tag">Capstone Project</span></p>
+                        <div class="button-container">
+                             <a href="https://apps.apple.com/us/app/elev%C3%A9/id6745745397" target="_blank" class="inline-block">
+                                <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" class="app-store-badge">
+                            </a>
+                        </div>
                     </div>
-                    <div class="project-item bg-gray-50 p-6 rounded-lg shadow-sm border border-gray-200">
+                    <div class="project-item bg-gray-50 p-6 rounded-lg shadow-sm border border-gray-200 flex flex-col">
                         <img src="Assets/Pictures/Simulation.png" alt="Unreal Engine Simulation Project Screenshot" class="project-image" onerror="this.onerror=null; this.src='https://placehold.co/600x250/F3F4F6/9CA3AF?text=UE5+Simulation';">
                         <h4 class="text-xl font-semibold text-blue-600 mb-2">Unreal Engine Simulation Project</h4>
-                        <p class="mb-3">Developed a 3D educational environment using Unreal Engine 5 to simulate Arctic climate impact scenarios. This project focused on creating an immersive, insight-driven platform to visualize complex environmental data and its consequences.</p>
-                        <p><em>Technologies:</em> <span class="tag">Unreal Engine 5</span> <span class="tag">3D Modeling (Conceptual)</span> <span class="tag">Simulation Design</span> <span class="tag">Educational Technology</span></p>
-                        <a href="https://youtu.be/pljGr6RGVnI" target="_blank" class="youtube-link">
-                            View Project Video
-                        </a>
+                        <p class="mb-3 flex-grow">Developed a 3D educational environment using Unreal Engine 5 to simulate Arctic climate impact scenarios. This project focused on creating an immersive, insight-driven platform to visualize complex environmental data and its consequences.</p>
+                        <p class="mb-3"><em>Technologies:</em> <span class="tag">Unreal Engine 5</span> <span class="tag">3D Modeling (Conceptual)</span> <span class="tag">Simulation Design</span> <span class="tag">Educational Technology</span></p>
+                        <div class="button-container">
+                            <a href="https://youtu.be/pljGr6RGVnI" target="_blank" class="youtube-link">
+                                View Project Video
+                            </a>
+                        </div>
                     </div>
                     <div class="project-item bg-gray-50 p-6 rounded-lg shadow-sm border border-gray-200 col-span-1 lg:col-span-2">
                         <h4 class="text-xl font-semibold text-blue-600 mb-3">Academic Project Showcase</h4>
@@ -283,7 +294,9 @@
                             <div>
                                 <h5 class="text-lg font-semibold text-gray-800">Systems Analysis & Design (ILS-Z 556)</h5>
                                 <p class="text-gray-700 mt-1 mb-2">Led a team project focused on Systems Analysis and Design, proposing graph database solutions for real-world case studies. This included designing a system for NewYork Presbyterian Hospital to track and prevent infection spread using Neo4j to model spatial-temporal event data, and a system for SITA to manage lost and found property at airports by efficiently matching items to passenger reports.</p>
-                                <a href="Assets/Presentation PDF/SYSTEMS ANALYSIS & DESIGN.pdf" target="_blank" class="drive-link">View Project Presentation</a>
+                                <div class="button-container">
+                                    <a href="Assets/Presentation PDF/SYSTEMS ANALYSIS & DESIGN.pdf" target="_blank" class="drive-link">View Project Presentation</a>
+                                </div>
                             </div>
                             <div>
                                 <h5 class="text-lg font-semibold text-gray-800">Information Visualization (ILS-Z 637)</h5>
@@ -292,23 +305,31 @@
                             <div>
                                 <h5 class="text-lg font-semibold text-gray-800">Database Design (ILS-Z 511)</h5>
                                 <p class="text-gray-700 mt-1 mb-2">Designed and documented a relational database for 'GAP Inc.,' a conceptual digital music distribution platform. The project involved creating an Entity-Relationship Diagram (EERD), defining a relational schema, and outlining data management processes to handle artists, albums, tracks, sales, and user playlists. This project emphasized ensuring data integrity and efficient querying for various stakeholders in the music industry.</p>
-                                <a href="Assets/Papers/Database Design.pdf" target="_blank" class="drive-link">View Project Report</a>
+                                <div class="button-container">
+                                    <a href="Assets/Papers/Database Design.pdf" target="_blank" class="drive-link">View Project Report</a>
+                                </div>
                             </div>
                             <div>
                                 <h5 class="text-lg font-semibold text-gray-800">Social Media Mining (ILS-Z 639)</h5>
                                 <p class="text-gray-700 mt-1 mb-2">Conducted multiple research projects utilizing Python (Pandas, NLTK, VADER, TextBlob, Gensim) and APIs (PRAW, Tweepy) for social media data collection and analysis. Key research papers include:</p>
-                                <ul class="list-disc list-inside ml-4 space-y-3 text-gray-700 mt-2">
+                                <ul class="list-disc list-inside ml-4 space-y-4 text-gray-700 mt-2">
                                     <li>
                                         "Reddit Sentiment as a Predictor for Market Corrections and Rallies" - Analyzed Reddit discussions to identify sentiment shifts preceding significant stock market movements.
-                                        <a href="Assets/Papers/Social Media Mining/Paper 1.pdf" target="_blank" class="drive-link ml-2 mt-1">View Paper</a>
+                                        <div class="button-container">
+                                            <a href="Assets/Papers/Social Media Mining/Paper 1.pdf" target="_blank" class="drive-link">View Paper</a>
+                                        </div>
                                     </li>
                                     <li>
                                         "Framing the Narrative: Media Bias in the Coverage of Elon Musk Before and After Trump’s Support" - Investigated changes in media portrayal and public sentiment towards Elon Musk across news and social platforms.
-                                        <a href="Assets/Papers/Social Media Mining/Paper 2.pdf" target="_blank" class="drive-link ml-2 mt-1">View Paper</a>
+                                        <div class="button-container">
+                                            <a href="Assets/Papers/Social Media Mining/Paper 2.pdf" target="_blank" class="drive-link">View Paper</a>
+                                        </div>
                                     </li>
                                     <li>
                                         "Strategic Discourse and Public Perception: Nuclear Rhetoric, Military Aid, and the Russia-Ukraine War" - Examined how differing official communications influenced public discourse and sentiment on Twitter (X).
-                                        <a href="Assets/Papers/Social Media Mining/Paper 3.pdf" target="_blank" class="drive-link ml-2 mt-1">View Paper</a>
+                                        <div class="button-container">
+                                            <a href="Assets/Papers/Social Media Mining/Paper 3.pdf" target="_blank" class="drive-link">View Paper</a>
+                                        </div>
                                     </li>
                                 </ul>
                             </div>
@@ -325,8 +346,8 @@
                      <p class="mt-2 text-gray-700">Representing student interests and providing constructive feedback on the Master of Information Science curriculum at Indiana University's Luddy School of Informatics, Computing, and Engineering. Collaborating with faculty to enhance course offerings and student experience.</p>
                      <p class="mt-2 text-gray-700">Key contributions include designing and distributing a comprehensive student feedback survey using Qualtrics, analyzing the collected data to identify key insights, and compiling a detailed report with recommendations for curriculum improvements.</p>
                      <p class="mt-1"><em>Skills demonstrated:</em> <span class="tag">Qualtrics</span> <span class="tag">Survey Design & Analysis</span> <span class="tag">Data Analysis</span> <span class="tag">Report Writing</span> <span class="tag">Stakeholder Communication</span></p>
-                     <div class="mt-3">
-                        <a href="https://drive.google.com/file/d/1P4c7kkrX6tzHMWAohN4hzZs9rk-ubQfG/view?usp=share_link" target="_blank" class="drive-link mr-2">View Survey (PDF)</a>
+                     <div class="button-container flex flex-wrap gap-3">
+                        <a href="https://drive.google.com/file/d/1P4c7kkrX6tzHMWAohN4hzZs9rk-ubQfG/view?usp=share_link" target="_blank" class="drive-link">View Survey (PDF)</a>
                         <a href="https://drive.google.com/file/d/1yW6LEuInY8fwaR4IKlXiWxvSaAFJiWtm/view?usp=share_link" target="_blank" class="drive-link">View Report (PDF)</a>
                      </div>
                 </div>
@@ -351,8 +372,7 @@
         <footer class="bg-gray-800 text-white py-8 text-center mt-auto">
             <p>© <span id="currentYear"></span> Pranav Patil. All Rights Reserved.</p>
             <p>Hosted on <a href="https://pages.github.com/" target="_blank" class="text-blue-400 hover:text-blue-300 underline">GitHub Pages</a>.</p>
-            <p class="text-sm text-gray-400 mt-2">Last Updated: May 2025</p>
-        </footer>
+            <p class="text-sm text-gray-400 mt-2">Last Updated: May 2025</p> </footer>
     </div>
 
     <script>
@@ -366,18 +386,11 @@
                 const targetId = this.getAttribute('href');
                 const targetElement = document.querySelector(targetId);
                 if (targetElement) {
-                    // Calculate the position of the target element relative to the document
-                    const navHeight = document.querySelector('nav').offsetHeight; // Get nav height
+                    const navHeight = document.querySelector('nav').offsetHeight;
                     
-                    // Alternative calculation for offset, sometimes more reliable
-                    let elementPosition = targetElement.offsetTop; // Position relative to the offsetParent
-                    let currentElement = targetElement.offsetParent;
-                    while (currentElement) {
-                        elementPosition += currentElement.offsetTop;
-                        currentElement = currentElement.offsetParent;
-                    }
+                    // Calculate element's position relative to the document top
+                    let elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
                     const offsetPosition = elementPosition - navHeight;
-
 
                     window.scrollTo({
                         top: offsetPosition,
