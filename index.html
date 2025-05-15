@@ -117,7 +117,7 @@
             <section id="about" class="py-8 px-6 bg-white shadow-md rounded-lg mb-12">
                 <div class="flex flex-wrap md:flex-nowrap items-start">
                     <div class="md:mr-8 mb-6 md:mb-0 flex-shrink-0">
-                        <img src="Assets/Pictures/profile.png" alt="Pranav Patil" class="profile-pic rounded-full shadow-lg mx-auto md:mx-0">
+                        <img src="Assets/Pictures/profile.png" alt="Pranav Patil" class="profile-pic rounded-full shadow-lg mx-auto md:mx-0" onerror="this.onerror=null; this.src='https://placehold.co/150x150/E0E0E0/B0B0B0?text=P.P.';">
                     </div>
                     <div class="flex-grow">
                         <h2 class="text-3xl font-semibold text-gray-700 section-title">About Me</h2>
@@ -174,7 +174,7 @@
                     <div class="skill-category bg-gray-50 p-6 rounded-lg shadow-sm border border-gray-200">
                         <h4 class="text-xl font-semibold text-blue-600 mb-2">Programming & Analysis</h4>
                         <ul class="list-disc list-inside space-y-1">
-                            <li>Python (Pandas, NumPy, Scikit-learn)</li>
+                            <li>Python (Pandas, NumPy, Scikit-learn, NLTK, VADER, TextBlob, Gensim)</li>
                             <li>SQL (PostgreSQL, MySQL)</li>
                             <li>Neo4j (Graph Databases)</li>
                             <li>Tableau</li>
@@ -208,6 +208,7 @@
                         <ul class="list-disc list-inside space-y-1">
                             <li>GitHub & Git Version Control</li>
                             <li>Xcode (iOS Development)</li>
+                            <li>Swift</li>
                             <li>Qualtrics</li>
                             <li>Notion</li>
                             <li>Google Workspace Suite</li>
@@ -258,7 +259,7 @@
                 <h2 class="text-3xl font-semibold text-gray-700 section-title">Projects</h2>
                 <div class="grid md:grid-cols-1 lg:grid-cols-2 gap-8">
                     <div class="project-item bg-gray-50 p-6 rounded-lg shadow-sm border border-gray-200">
-                        <img src="Assets/Pictures/Eleve.png" alt="Elevé App Screenshot" class="project-image">
+                        <img src="Assets/Pictures/Eleve.png" alt="Elevé App Screenshot" class="project-image" onerror="this.onerror=null; this.src='https://placehold.co/600x250/F3F4F6/9CA3AF?text=Elevé+App';">
                         <h4 class="text-xl font-semibold text-blue-600 mb-2">Elevé - iOS App (Master's Capstone Project)</h4>
                         <p class="mb-3">Developed "Elevé," an iOS application focused on daily quotes and mood insights, as my Master's Capstone project (ILS-Z 690). Built using Xcode and Swift, the app aims to provide users with daily inspiration and a simple way to track and reflect on their mood. Expected completion: Fall 2025.</p>
                         <p><em>Technologies:</em> <span class="tag">iOS Development</span> <span class="tag">Xcode</span> <span class="tag">Swift</span> <span class="tag">UI/UX Design</span> <span class="tag">Capstone Project</span></p>
@@ -267,7 +268,7 @@
                         </a>
                     </div>
                     <div class="project-item bg-gray-50 p-6 rounded-lg shadow-sm border border-gray-200">
-                        <img src="Assets/Pictures/Simulation.png" alt="Unreal Engine Simulation Project Screenshot" class="project-image">
+                        <img src="Assets/Pictures/Simulation.png" alt="Unreal Engine Simulation Project Screenshot" class="project-image" onerror="this.onerror=null; this.src='https://placehold.co/600x250/F3F4F6/9CA3AF?text=UE5+Simulation';">
                         <h4 class="text-xl font-semibold text-blue-600 mb-2">Unreal Engine Simulation Project</h4>
                         <p class="mb-3">Developed a 3D educational environment using Unreal Engine 5 to simulate Arctic climate impact scenarios. This project focused on creating an immersive, insight-driven platform to visualize complex environmental data and its consequences.</p>
                         <p><em>Technologies:</em> <span class="tag">Unreal Engine 5</span> <span class="tag">3D Modeling (Conceptual)</span> <span class="tag">Simulation Design</span> <span class="tag">Educational Technology</span></p>
@@ -276,15 +277,42 @@
                         </a>
                     </div>
                     <div class="project-item bg-gray-50 p-6 rounded-lg shadow-sm border border-gray-200 col-span-1 lg:col-span-2">
-                        <h4 class="text-xl font-semibold text-blue-600 mb-2">Academic Project Showcase (Examples)</h4>
-                        <p class="mb-3">Throughout my M.S. program, I've worked on various applied projects. Examples include:</p>
-                        <ul class="list-disc list-inside space-y-2">
-                            <li><strong>Systems Analysis & Design (ILS-Z 556):</strong> Led a team to develop a comprehensive system requirements specification and design prototype for an innovative information management solution for [e.g., a non-profit organization or a university department].</li>
-                            <li><strong>Information Visualization (ILS-Z 637):</strong> Created interactive dashboards using Tableau to analyze and present insights from [e.g., a large public dataset on global health trends], focusing on clear communication of complex patterns.</li>
-                            <li><strong>Database Design (ILS-Z 511):</strong> Designed, implemented, and queried a relational database for [e.g., a mock e-commerce platform], ensuring data integrity and efficient retrieval.</li>
-                            <li><strong>Social Media Mining (ILS-Z 639):</strong> Utilized Python libraries (e.g., Tweepy, NLTK) to collect and analyze social media data, identifying key themes and sentiment related to [e.g., public discourse on a new technology].</li>
-                        </ul>
-                        <p class="mt-3"><em>Note: Specific project details, reports, or links to GitHub repositories (if public) can be added as they become available.</em></p>
+                        <h4 class="text-xl font-semibold text-blue-600 mb-3">Academic Project Showcase</h4>
+                        <p class="mb-4 text-gray-700">Throughout my M.S. program, I've worked on various applied projects, developing practical skills in data analysis, system design, and research. Below are highlights from my coursework:</p>
+                        <div class="space-y-6">
+                            <div>
+                                <h5 class="text-lg font-semibold text-gray-800">Systems Analysis & Design (ILS-Z 556)</h5>
+                                <p class="text-gray-700 mt-1 mb-2">Led a team project focused on Systems Analysis and Design, proposing graph database solutions for real-world case studies. This included designing a system for NewYork Presbyterian Hospital to track and prevent infection spread using Neo4j to model spatial-temporal event data, and a system for SITA to manage lost and found property at airports by efficiently matching items to passenger reports.</p>
+                                <a href="https://drive.google.com/file/d/1dZoTPOM_CH_Tu0gZ2lbtLJR2L5dhpl9C/view?usp=sharing" target="_blank" class="drive-link">View Project Presentation</a>
+                            </div>
+                            <div>
+                                <h5 class="text-lg font-semibold text-gray-800">Information Visualization (ILS-Z 637)</h5>
+                                <p class="text-gray-700 mt-1 mb-2">Developed an interactive Tableau dashboard to analyze and visualize U.S. basketball participation trends post-COVID. The project effectively utilized maps, bar charts, and line charts to present data engagingly, making complex information accessible and highlighting key insights through detailed visual elements. This demonstrated skills in transforming raw data into compelling visual narratives for data-driven decision-making.</p>
+                                </div>
+                            <div>
+                                <h5 class="text-lg font-semibold text-gray-800">Database Design (ILS-Z 511)</h5>
+                                <p class="text-gray-700 mt-1 mb-2">Designed and documented a relational database for 'GAP Inc.,' a conceptual digital music distribution platform. The project involved creating an Entity-Relationship Diagram (EERD), defining a relational schema, and outlining data management processes to handle artists, albums, tracks, sales, and user playlists. This project emphasized ensuring data integrity and efficient querying for various stakeholders in the music industry.</p>
+                                <a href="https://drive.google.com/file/d/1Hro5_LAwopQwbuJ0nA33Dte0LnQZkl-h/view?usp=share_link" target="_blank" class="drive-link">View Project Report</a>
+                            </div>
+                            <div>
+                                <h5 class="text-lg font-semibold text-gray-800">Social Media Mining (ILS-Z 639)</h5>
+                                <p class="text-gray-700 mt-1 mb-2">Conducted multiple research projects utilizing Python (Pandas, NLTK, VADER, TextBlob, Gensim) and APIs (PRAW, Tweepy) for social media data collection and analysis. Key research papers include:</p>
+                                <ul class="list-disc list-inside ml-4 space-y-3 text-gray-700 mt-2">
+                                    <li>
+                                        "Reddit Sentiment as a Predictor for Market Corrections and Rallies" - Analyzed Reddit discussions to identify sentiment shifts preceding significant stock market movements.
+                                        <a href="https://drive.google.com/file/d/1hRGsv9v-w9gWtALJrtkfTBkhM-xLHoFb/view?usp=sharing" target="_blank" class="drive-link ml-2 mt-1">View Paper</a>
+                                    </li>
+                                    <li>
+                                        "Framing the Narrative: Media Bias in the Coverage of Elon Musk Before and After Trump’s Support" - Investigated changes in media portrayal and public sentiment towards Elon Musk across news and social platforms.
+                                        <a href="https://drive.google.com/file/d/1MjP99zGl5u8hyMOfKG0JAH6rgmZZlQeV/view?usp=sharing" target="_blank" class="drive-link ml-2 mt-1">View Paper</a>
+                                    </li>
+                                    <li>
+                                        "Strategic Discourse and Public Perception: Nuclear Rhetoric, Military Aid, and the Russia-Ukraine War" - Examined how differing official communications influenced public discourse and sentiment on Twitter (X).
+                                        <a href="https://drive.google.com/file/d/1DEcxLjFZcIlbZPgUoK_wMxL87rdplzFi/view?usp=sharing" target="_blank" class="drive-link ml-2 mt-1">View Paper</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -294,15 +322,15 @@
                 <div class="job bg-gray-50 p-6 rounded-lg shadow-sm border border-gray-200">
                      <h4 class="text-xl font-semibold text-blue-600">Student Representative, MIS Curriculum Committee</h4>
                      <p class="text-sm text-gray-500 italic">2024 – 2025</p>
-                     <p class="mt-2">Representing student interests and providing constructive feedback on the Master of Information Science curriculum at Indiana University's Luddy School of Informatics, Computing, and Engineering. Collaborating with faculty to enhance course offerings and student experience.</p>
-                     <p class="mt-2">Key contributions include designing and distributing a comprehensive student feedback survey using Qualtrics, analyzing the collected data to identify key insights, and compiling a detailed report with recommendations for curriculum improvements.</p>
+                     <p class="mt-2 text-gray-700">Representing student interests and providing constructive feedback on the Master of Information Science curriculum at Indiana University's Luddy School of Informatics, Computing, and Engineering. Collaborating with faculty to enhance course offerings and student experience.</p>
+                     <p class="mt-2 text-gray-700">Key contributions include designing and distributing a comprehensive student feedback survey using Qualtrics, analyzing the collected data to identify key insights, and compiling a detailed report with recommendations for curriculum improvements.</p>
                      <p class="mt-1"><em>Skills demonstrated:</em> <span class="tag">Qualtrics</span> <span class="tag">Survey Design & Analysis</span> <span class="tag">Data Analysis</span> <span class="tag">Report Writing</span> <span class="tag">Stakeholder Communication</span></p>
                      <div class="mt-3">
                         <a href="https://drive.google.com/file/d/1P4c7kkrX6tzHMWAohN4hzZs9rk-ubQfG/view?usp=share_link" target="_blank" class="drive-link mr-2">View Survey (PDF)</a>
                         <a href="https://drive.google.com/file/d/1yW6LEuInY8fwaR4IKlXiWxvSaAFJiWtm/view?usp=share_link" target="_blank" class="drive-link">View Report (PDF)</a>
                      </div>
                 </div>
-                </section>
+            </section>
 
             <section id="contact" class="py-8 px-6 bg-white shadow-md rounded-lg">
                 <h2 class="text-3xl font-semibold text-gray-700 section-title">Connect With Me</h2>
@@ -338,9 +366,20 @@
                 const targetId = this.getAttribute('href');
                 const targetElement = document.querySelector(targetId);
                 if (targetElement) {
+                    // Calculate the position of the target element relative to the document
                     const navHeight = document.querySelector('nav').offsetHeight; // Get nav height
-                    const elementPosition = targetElement.getBoundingClientRect().top;
-                    const offsetPosition = elementPosition + window.pageYOffset - navHeight;
+                    // const elementPosition = targetElement.getBoundingClientRect().top; // Position relative to viewport
+                    // const offsetPosition = elementPosition + window.pageYOffset - navHeight; // Corrected offset
+                    
+                    // Alternative calculation for offset, sometimes more reliable
+                    let elementPosition = targetElement.offsetTop; // Position relative to the offsetParent
+                    let currentElement = targetElement.offsetParent;
+                    while (currentElement) {
+                        elementPosition += currentElement.offsetTop;
+                        currentElement = currentElement.offsetParent;
+                    }
+                    const offsetPosition = elementPosition - navHeight;
+
 
                     window.scrollTo({
                         top: offsetPosition,
