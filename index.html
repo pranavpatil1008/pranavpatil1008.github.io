@@ -88,9 +88,10 @@
         .project-image {
             width: 100%; /* Make image take full width of its container */
             height: 250px; /* Fixed height for all project images */
-            object-fit: cover; /* Cover the area, cropping if necessary to maintain aspect ratio */
+            object-fit: contain; /* Contain the entire image within the area, letterboxing if necessary */
             border-radius: 0.375rem; /* Tailwind's rounded-md */
             margin-bottom: 1rem; /* Space below the image */
+            background-color: #f9fafb; /* Optional: a light background for the letterbox area, Tailwind gray-50 */
         }
     </style>
 </head>
@@ -142,10 +143,10 @@
                 <h3 class="text-2xl font-semibold text-gray-700 mt-8 mb-3">Key Interests</h3>
                 <ul class="list-disc list-inside mb-6 space-y-1 text-lg">
                     <li>Data Analysis & Visualization</li>
-                    <li>Disinformation Research & Counterintelligence</li>
-                    <li>Intelligence Studies</li>
-                    <li>Emerging Technologies & AI Ethics</li>
                     <li>Human-Centered Computing & UX</li>
+                    <li>iOS App Development</li>
+                    <li>Information Systems & Design</li>
+                    <li>Emerging Technologies & AI Ethics</li>
                 </ul>
 
                 <h3 class="text-2xl font-semibold text-gray-700 mb-3">Soft Skills</h3>
@@ -351,6 +352,3 @@
     </script>
 </body>
 </html>
-```
-
-After uploading this `index.html` and ensuring your images are in the `Assets/Pictures/` folder in your GitHub repository, the project images should now have a consistent height, making that section look more uniform. You can adjust the `height: 250px;` value in the `.project-image` CSS if you'd like them taller or short
