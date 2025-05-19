@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pranav Patil | Information Science Professional</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Basic styling for elements not easily covered by Tailwind or for overrides */
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+            scroll-behavior: smooth; /* Smooth scrolling for anchor links */
+        }
+        nav a:hover {
+            background-color: #2563eb; /* A Tailwind blue color */
+            color: white;
+        }
+        .section-title {
+            border-bottom: 3px solid #2563eb; /* Tailwind's blue-600 */
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .tag {
+            display: inline-block;
+            background-color: #3b82f6; /* Tailwind's blue-500 */
+            color: white;
+            padding: 0.3em 0.7em;
+            margin: 0.2em;
+            border-radius: 0.25rem; /* Tailwind's rounded-md */
+            font-size: 0.85em;
+        }
+        .project-item, .job, .skill-category {
+            transition: transform 0.2s ease-in-out;
+        }
+        .project-item:hover, .job:hover, .skill-category:hover {
+            transform: translateY(-5px);
+        }
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+        .site-container {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .content-wrap {
+            flex: 1;
+        }
+        .app-store-badge {
+            display: inline-block;
+            height: 40px; /* Adjust as needed */
+            margin-top: 10px;
+        }
+        /* Styling for PDF/Document links */
+        .drive-link { 
+            display: inline-block; /* Allows margin/padding and doesn't break line */
+            padding: 0.5rem 1rem;
+            background-color: #4285F4; /* Google Drive Blue - or a generic blue for PDF links */
+            color: white;
+            text-decoration: none;
+            border-radius: 0.25rem; /* Tailwind's rounded-sm */
+            font-size: 0.9em;
+            transition: background-color 0.2s;
+            text-align: center; /* Center text if button takes full width */
+        }
+        .drive-link:hover {
+            background-color: #3367D6; /* Darker blue on hover */
+        }
+        /* Styling for YouTube links, similar to drive-link for consistency */
+        .youtube-link {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background-color: #FF0000; /* YouTube Red */
+            color: white;
+            text-decoration: none;
+            border-radius: 0.25rem;
+            font-size: 0.9em;
+            transition: background-color 0.2s;
+            text-align: center;
+        }
+        .youtube-link:hover{
+            background-color: #CC0000; /* Darker red on hover */
+        }
+        .profile-pic {
+            width: 150px; 
+            height: 150px;
+            object-fit: cover; 
+        }
+        .project-image {
+            width: 100%; 
+            height: 250px; 
+            object-fit: contain; 
+            border-radius: 0.375rem; 
+            margin-bottom: 1rem; 
+            background-color: #f9fafb; 
+        }
+        /* Added class for consistent button container spacing */
+        .button-container {
+            margin-top: 0.75rem; /* Tailwind's mt-3 */
+            margin-bottom: 0.5rem; /* Tailwind's mb-2 */
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+    <div class="site-container">
+        <header class="bg-gray-800 text-white py-6 text-center shadow-lg">
+            <h1 class="text-4xl font-bold">Pranav Patil</h1>
+            <p class="text-xl text-gray-300 mt-1">Information Science Professional & Tech Enthusiast</p>
+        </header>
+
+        <nav class="bg-gray-700 text-white py-3 sticky top-0 z-50 shadow">
+            <ul class="container mx-auto flex justify-center flex-wrap space-x-2 md:space-x-6">
+                <li><a href="#about" class="px-3 py-2 rounded-md hover:bg-blue-600 transition-colors">About</a></li>
+                <li><a href="#skills" class="px-3 py-2 rounded-md hover:bg-blue-600 transition-colors">Skills</a></li>
+                <li><a href="#experience" class="px-3 py-2 rounded-md hover:bg-blue-600 transition-colors">Experience</a></li>
+                <li><a href="#projects" class="px-3 py-2 rounded-md hover:bg-blue-600 transition-colors">Projects</a></li>
+                <li><a href="#leadership" class="px-3 py-2 rounded-md hover:bg-blue-600 transition-colors">Leadership</a></li>
+                <li><a href="#contact" class="px-3 py-2 rounded-md hover:bg-blue-600 transition-colors">Contact</a></li>
+            </ul>
+        </nav>
+
+        <main class="content-wrap container mx-auto px-4 py-8">
+            <section id="about" class="py-8 px-6 bg-white shadow-md rounded-lg mb-12">
+                <div class="flex flex-wrap md:flex-nowrap items-start">
+                    <div class="md:mr-8 mb-6 md:mb-0 flex-shrink-0">
+                        <img src="Assets/Pictures/profile.png" alt="Pranav Patil" class="profile-pic rounded-full shadow-lg mx-auto md:mx-0" onerror="this.onerror=null; this.src='https://placehold.co/150x150/E0E0E0/B0B0B0?text=P.P.';">
+                    </div>
+                    <div class="flex-grow">
+                        <h2 class="text-3xl font-semibold text-gray-700 section-title">About Me</h2>
+                        <p class="mb-4 text-lg">Adaptable and driven Master’s student in Information Science with a strong foundation in data analysis, disinformation research, and intelligence studies. Experienced in using tools like Python, SQL, Neo4j, and Tableau to extract insights from complex datasets. Demonstrated leadership in high-pressure environments and a deep curiosity for emerging technologies.</p>
+                        <p class="mb-6 text-lg">My journey into Information Science is fueled by a passion for uncovering insights from data and understanding the impact of technology on society. My background in Management and Human Organization provides a unique perspective on how information systems and data can be leveraged effectively within various contexts.</p>
+                    </div>
+                </div>
+                
+                <h3 class="text-2xl font-semibold text-gray-700 mt-8 mb-3">Education</h3>
+                <div class="job bg-gray-50 p-6 rounded-lg shadow-sm mb-6 border border-gray-200">
+                    <h4 class="text-xl font-semibold text-blue-600">M.S. in Information Science</h4>
+                    <p class="text-gray-600">Indiana University, Luddy School of Informatics, Computing, and Engineering</p>
+                    <p class="text-sm text-gray-500 italic">May 2025</p>
+                    <p class="mt-2"><em>Key Coursework:</em> Systems Analysis & Design, Information Visualization, Database Design, Social Media Mining, Deception and Counterintelligence, Human-Computer Interaction, Organizational Informatics & Economics Security.</p>
+                </div>
+                <div class="job bg-gray-50 p-6 rounded-lg shadow-sm border border-gray-200">
+                    <h4 class="text-xl font-semibold text-blue-600">B.A. in Management and Human Organization</h4>
+                    <p class="text-gray-600">Indiana University</p>
+                    <p class="text-sm text-gray-500 italic">December 2022</p>
+                    <p class="mt-2"><em>Minor:</em> Human-Centered Computing</p>
+                </div>
+
+                <h3 class="text-2xl font-semibold text-gray-700 mt-8 mb-3">Key Interests</h3>
+                <ul class="list-disc list-inside mb-6 space-y-1 text-lg">
+                    <li>Data Analysis & Visualization</li>
+                    <li>Human-Centered Computing & UX</li>
+                    <li>iOS App Development</li>
+                    <li>Information Systems & Design</li>
+                    <li>Emerging Technologies & AI Ethics</li>
+                </ul>
+
+                <h3 class="text-2xl font-semibold text-gray-700 mb-3">Soft Skills</h3>
+                <div class="flex flex-wrap gap-2 mb-6">
+                    <span class="tag">Fast Learner</span>
+                    <span class="tag">Analytical Mindset</span>
+                    <span class="tag">Highly Adaptive</span>
+                    <span class="tag">Excellent Communicator</span>
+                    <span class="tag">Problem Solver</span>
+                    <span class="tag">Collaborative</span>
+                    <span class="tag">Detail-Oriented</span>
+                </div>
+
+                <h3 class="text-2xl font-semibold text-gray-700 mb-3">Languages</h3>
+                <div class="flex flex-wrap gap-2">
+                    <span class="tag">English (Fluent)</span>
+                    <span class="tag">Hindi (Native)</span>
+                    <span class="tag">Marathi (Native)</span>
+                </div>
+            </section>
+
+            <section id="skills" class="py-8 px-6 bg-white shadow-md rounded-lg mb-12">
+                <h2 class="text-3xl font-semibold text-gray-700 section-title">Skills</h2>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="skill-category bg-gray-50 p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h4 class="text-xl font-semibold text-blue-600 mb-2">Programming & Analysis</h4>
+                        <ul class="list-disc list-inside space-y-1">
+                            <li>Python (Pandas, NumPy, Scikit-learn, NLTK, VADER, TextBlob, Gensim)</li>
+                            <li>SQL (PostgreSQL, MySQL)</li>
+                            <li>Neo4j (Graph Databases)</li>
+                            <li>Tableau</li>
+                            <li>NVivo</li>
+                            <li>Jupyter Notebooks</li>
+                            <li>Gephi</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category bg-gray-50 p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h4 class="text-xl font-semibold text-blue-600 mb-2">Research & Intelligence</h4>
+                        <ul class="list-disc list-inside space-y-1">
+                            <li>Disinformation Analysis</li>
+                            <li>Hybrid Warfare Studies</li>
+                            <li>Deception Studies</li>
+                            <li>Open-Source Intelligence (OSINT)</li>
+                            <li>Threat Assessment</li>
+                            <li>Survey Design & Analysis</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category bg-gray-50 p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h4 class="text-xl font-semibold text-blue-600 mb-2">Visualization & Design</h4>
+                        <ul class="list-disc list-inside space-y-1">
+                            <li>Tableau</li>
+                            <li>Gephi</li>
+                            <li>Unreal Engine 5 (Conceptual Design)</li>
+                            <li>Figma (Basic UI/UX Prototyping)</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category bg-gray-50 p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h4 class="text-xl font-semibold text-blue-600 mb-2">Other Tools & Platforms</h4>
+                        <ul class="list-disc list-inside space-y-1">
+                            <li>GitHub & Git Version Control</li>
+                            <li>Xcode (iOS Development)</li>
+                            <li>Swift</li>
+                            <li>Qualtrics</li>
+                            <li>Notion</li>
+                            <li>Google Workspace Suite</li>
+                            <li>Adobe Acrobat Pro</li>
+                            <li>Microsoft Office Suite</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="experience" class="py-8 px-6 bg-white shadow-md rounded-lg mb-12">
+                <h2 class="text-3xl font-semibold text-gray-700 section-title">Professional Experience</h2>
+                <div class="space-y-8">
+                    <div class="job bg-gray-50 p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h4 class="text-xl font-semibold text-blue-600">Assistant Manager</h4>
+                        <p class="text-gray-600">Residential Programs and Services, IMU, Forest Dining — Bloomington, IN</p>
+                        <p class="text-sm text-gray-500 italic">May 2019 – October 2024</p>
+                        <ul class="list-disc list-inside mt-2 space-y-1">
+                            <li>Managed and mentored over 100 student staff members across various shifts, fostering a collaborative and productive team culture.</li>
+                            <li>Resolved operational challenges efficiently and streamlined workflows to meet dynamic campus demands and service standards.</li>
+                            <li>Actively encouraged feedback and implemented cross-team improvements to enhance service quality and operational efficiency.</li>
+                        </ul>
+                    </div>
+                    <div class="job bg-gray-50 p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h4 class="text-xl font-semibold text-blue-600">Consultant / Founder</h4>
+                        <p class="text-gray-600">Radha Madhav Buildcon Ltd. — Pune, MH, India</p>
+                        <p class="text-sm text-gray-500 italic">May 2017 – Present</p>
+                        <ul class="list-disc list-inside mt-2 space-y-1">
+                            <li>Founded a real estate consultancy focusing on residential development projects.</li>
+                            <li>Successfully raised capital, managed project pitches, and cultivated client relationships, navigating challenges including the COVID-19 pandemic.</li>
+                            <li>Handled cross-border communications and managed documentation for international stakeholders and clients.</li>
+                        </ul>
+                    </div>
+                    <div class="job bg-gray-50 p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h4 class="text-xl font-semibold text-blue-600">Manager</h4>
+                        <p class="text-gray-600">Life Designs Inc. — Bloomington, IN</p>
+                        <p class="text-sm text-gray-500 italic">February 2023 – July 2023</p>
+                        <ul class="list-disc list-inside mt-2 space-y-1">
+                            <li>Oversaw operations for multiple group homes and managed care teams serving Individuals with diverse health needs.</li>
+                            <li>Developed and implemented personalized care plans in collaboration with multidisciplinary professionals.</li>
+                            <li>Ensured strict compliance with all legal, ethical, and quality care standards.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="projects" class="py-8 px-6 bg-white shadow-md rounded-lg mb-12">
+                <h2 class="text-3xl font-semibold text-gray-700 section-title">Projects</h2>
+                <div class="grid md:grid-cols-1 lg:grid-cols-2 gap-8">
+                    <div class="project-item bg-gray-50 p-6 rounded-lg shadow-sm border border-gray-200 flex flex-col">
+                        <img src="Assets/Pictures/Eleve.png" alt="Elevé App Screenshot" class="project-image" onerror="this.onerror=null; this.src='https://placehold.co/600x250/F3F4F6/9CA3AF?text=Elevé+App';">
+                        <h4 class="text-xl font-semibold text-blue-600 mb-2">Elevé - iOS App (Master's Capstone Project)</h4>
+                        <p class="mb-3 flex-grow">Developed "Elevé," an iOS application focused on daily quotes and mood insights, as my Master's Capstone project (ILS-Z 690). Built using Xcode and Swift, the app aims to provide users with daily inspiration and a simple way to track and reflect on their mood. Expected completion: Fall 2025.</p>
+                        <p class="mb-3"><em>Technologies:</em> <span class="tag">iOS Development</span> <span class="tag">Xcode</span> <span class="tag">Swift</span> <span class="tag">UI/UX Design</span> <span class="tag">Capstone Project</span></p>
+                        <div class="button-container">
+                             <a href="https://apps.apple.com/us/app/elev%C3%A9/id6745745397" target="_blank" class="inline-block">
+                                <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" class="app-store-badge">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-item bg-gray-50 p-6 rounded-lg shadow-sm border border-gray-200 flex flex-col">
+                        <img src="Assets/Pictures/Simulation.png" alt="Unreal Engine Simulation Project Screenshot" class="project-image" onerror="this.onerror=null; this.src='https://placehold.co/600x250/F3F4F6/9CA3AF?text=UE5+Simulation';">
+                        <h4 class="text-xl font-semibold text-blue-600 mb-2">Unreal Engine Simulation Project</h4>
+                        <p class="mb-3 flex-grow">Developed a 3D educational environment using Unreal Engine 5 to simulate Arctic climate impact scenarios. This project focused on creating an immersive, insight-driven platform to visualize complex environmental data and its consequences.</p>
+                        <p class="mb-3"><em>Technologies:</em> <span class="tag">Unreal Engine 5</span> <span class="tag">3D Modeling (Conceptual)</span> <span class="tag">Simulation Design</span> <span class="tag">Educational Technology</span></p>
+                        <div class="button-container">
+                            <a href="https://youtu.be/pljGr6RGVnI" target="_blank" class="youtube-link">
+                                View Project Video
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-item bg-gray-50 p-6 rounded-lg shadow-sm border border-gray-200 col-span-1 lg:col-span-2">
+                        <h4 class="text-xl font-semibold text-blue-600 mb-3">Academic Project Showcase</h4>
+                        <p class="mb-4 text-gray-700">Throughout my M.S. program, I've worked on various applied projects, developing practical skills in data analysis, system design, and research. Below are highlights from my coursework:</p>
+                        <div class="space-y-6">
+                            <div>
+                                <h5 class="text-lg font-semibold text-gray-800">Systems Analysis & Design (ILS-Z 556)</h5>
+                                <p class="text-gray-700 mt-1 mb-2">Led a team project focused on Systems Analysis and Design, proposing graph database solutions for real-world case studies. This included designing a system for NewYork Presbyterian Hospital to track and prevent infection spread using Neo4j to model spatial-temporal event data, and a system for SITA to manage lost and found property at airports by efficiently matching items to passenger reports.</p>
+                                <div class="button-container">
+                                    <a href="Assets/Presentation PDF/SYSTEMS ANALYSIS & DESIGN.pdf" target="_blank" class="drive-link">View Project Presentation</a>
+                                </div>
+                            </div>
+                            <div>
+                                <h5 class="text-lg font-semibold text-gray-800">Information Visualization (ILS-Z 637)</h5>
+                                <p class="text-gray-700 mt-1 mb-2">Developed an interactive Tableau dashboard to analyze and visualize U.S. basketball participation trends post-COVID. The project effectively utilized maps, bar charts, and line charts to present data engagingly, making complex information accessible and highlighting key insights through detailed visual elements. This demonstrated skills in transforming raw data into compelling visual narratives for data-driven decision-making.</p>
+                            </div>
+                            <div>
+                                <h5 class="text-lg font-semibold text-gray-800">Database Design (ILS-Z 511)</h5>
+                                <p class="text-gray-700 mt-1 mb-2">Designed and documented a relational database for 'GAP Inc.,' a conceptual digital music distribution platform. The project involved creating an Entity-Relationship Diagram (EERD), defining a relational schema, and outlining data management processes to handle artists, albums, tracks, sales, and user playlists. This project emphasized ensuring data integrity and efficient querying for various stakeholders in the music industry.</p>
+                                <div class="button-container">
+                                    <a href="Assets/Papers/Database Design.pdf" target="_blank" class="drive-link">View Project Report</a>
+                                </div>
+                            </div>
+                            <div>
+                                <h5 class="text-lg font-semibold text-gray-800">Social Media Mining (ILS-Z 639)</h5>
+                                <p class="text-gray-700 mt-1 mb-2">Conducted multiple research projects utilizing Python (Pandas, NLTK, VADER, TextBlob, Gensim) and APIs (PRAW, Tweepy) for social media data collection and analysis. Key research papers include:</p>
+                                <ul class="list-disc list-inside ml-4 space-y-4 text-gray-700 mt-2">
+                                    <li>
+                                        "Reddit Sentiment as a Predictor for Market Corrections and Rallies" - Analyzed Reddit discussions to identify sentiment shifts preceding significant stock market movements.
+                                        <div class="button-container">
+                                            <a href="Assets/Papers/Social Media Mining/Paper 1.pdf" target="_blank" class="drive-link">View Paper</a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        "Framing the Narrative: Media Bias in the Coverage of Elon Musk Before and After Trump’s Support" - Investigated changes in media portrayal and public sentiment towards Elon Musk across news and social platforms.
+                                        <div class="button-container">
+                                            <a href="Assets/Papers/Social Media Mining/Paper 2.pdf" target="_blank" class="drive-link">View Paper</a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        "Strategic Discourse and Public Perception: Nuclear Rhetoric, Military Aid, and the Russia-Ukraine War" - Examined how differing official communications influenced public discourse and sentiment on Twitter (X).
+                                        <div class="button-container">
+                                            <a href="Assets/Papers/Social Media Mining/Paper 3.pdf" target="_blank" class="drive-link">View Paper</a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="leadership" class="py-8 px-6 bg-white shadow-md rounded-lg mb-12">
+                <h2 class="text-3xl font-semibold text-gray-700 section-title">Leadership & Affiliations</h2>
+                <div class="job bg-gray-50 p-6 rounded-lg shadow-sm border border-gray-200">
+                     <h4 class="text-xl font-semibold text-blue-600">Student Representative, MIS Curriculum Committee</h4>
+                     <p class="text-sm text-gray-500 italic">2024 – 2025</p>
+                     <p class="mt-2 text-gray-700">Representing student interests and providing constructive feedback on the Master of Information Science curriculum at Indiana University's Luddy School of Informatics, Computing, and Engineering. Collaborating with faculty to enhance course offerings and student experience.</p>
+                     <p class="mt-2 text-gray-700">Key contributions include designing and distributing a comprehensive student feedback survey using Qualtrics, analyzing the collected data to identify key insights, and compiling a detailed report with recommendations for curriculum improvements.</p>
+                     <p class="mt-1"><em>Skills demonstrated:</em> <span class="tag">Qualtrics</span> <span class="tag">Survey Design & Analysis</span> <span class="tag">Data Analysis</span> <span class="tag">Report Writing</span> <span class="tag">Stakeholder Communication</span></p>
+                     <div class="button-container flex flex-wrap gap-3">
+                        <a href="https://drive.google.com/file/d/1P4c7kkrX6tzHMWAohN4hzZs9rk-ubQfG/view?usp=share_link" target="_blank" class="drive-link">View Survey (PDF)</a>
+                        <a href="https://drive.google.com/file/d/1yW6LEuInY8fwaR4IKlXiWxvSaAFJiWtm/view?usp=share_link" target="_blank" class="drive-link">View Report (PDF)</a>
+                     </div>
+                </div>
+            </section>
+
+            <section id="contact" class="py-8 px-6 bg-white shadow-md rounded-lg">
+                <h2 class="text-3xl font-semibold text-gray-700 section-title">Connect With Me</h2>
+                <p class="mb-6 text-lg">I'm always open to discussing new opportunities, collaborations, or just chatting about technology, data, and innovative ideas. Feel free to reach out through the following platforms:</p>
+                <div class="flex justify-center space-x-6">
+                    <a href="https://github.com/pranavpatil1008" target="_blank" title="GitHub Profile" class="text-blue-600 hover:text-blue-800 transition-colors">
+                        <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.026 2.747-1.026.546 1.379.201 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" /></svg>
+                        <span class="sr-only">GitHub</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/pranav-patil-464955149/" target="_blank" title="LinkedIn Profile" class="text-blue-600 hover:text-blue-800 transition-colors">
+                        <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                        <span class="sr-only">LinkedIn</span>
+                    </a>
+                </div>
+            </section>
+        </main>
+
+        <footer class="bg-gray-800 text-white py-8 text-center mt-auto">
+            <p>© <span id="currentYear"></span> Pranav Patil. All Rights Reserved.</p>
+            <p>Hosted on <a href="https://pages.github.com/" target="_blank" class="text-blue-400 hover:text-blue-300 underline">GitHub Pages</a>.</p>
+            <p class="text-sm text-gray-400 mt-2">Last Updated: May 2025</p> 
+        </footer>
+    </div>
+
+    <script>
+        // Set current year in footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    const navHeight = document.querySelector('nav').offsetHeight;
+                    
+                    // Calculate element's position relative to the document top
+                    let elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+                    const offsetPosition = elementPosition - navHeight;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: "smooth"
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
